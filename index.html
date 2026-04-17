@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Parth Kotwal portfolio — University of Washington Computer Science student specializing in machine learning, recommendation systems, and software engineering projects.">
+    <meta property="og:image" content="images/headshot.jpeg">
+    <meta property="og:title" content="Parth Kotwal | Portfolio">
+    <meta property="og:description" content="Aspiring Computer Scientist">
+    <meta name="google-site-verification" content="SK5qAjTas4qST5e6Gf-IcqtOwrXVS4PAndkJHELZr-A" />
+
+    <title>Parth Kotwal | Computer Science Student | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/x-icon" href="images/golden-retriever-dog-breed-info.jpeg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- KaTeX: render math like LaTeX in the page -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters:[{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false},{left:'$',right:'$',display:false}]});"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" rel="stylesheet">
+    <style>
+        .fiery-text {
+            color: #ff6a00; 
+            animation: flame 1s infinite alternate ease-in-out;
+            font-weight: bold;
+        }
+
+        @keyframes flame {
+            0% { text-shadow: 0 0 4px #ff6a00, 0 0 8px #ff9500; transform: scale(1); }
+            50% { text-shadow: 0 0 6px #ffa500, 0 0 12px #ff4500; transform: scale(1.03); }
+            100% { text-shadow: 0 0 4px #ff6a00, 0 0 10px #ff8c00; transform: scale(1); }
+        }
+
+        .uw-purple {
+            color: purple;
+            font-weight: 600;
+        }
+
+        .passion-ml {
+            color: #0891b2;
+            font-style: italic;
+        }
+
+        .passion-build {
+            color: #38bd31;
+            font-style: italic;
+        }
+
+        .beli-link {
+            text-decoration: underline;
+            font-weight: 500;
+            transition: color 0.2s ease-in-out;
+        }
+
+        .beli-link:hover {
+            color: #E6456B;
+        }
+
+    </style>
+    <style>
+        /* Make KaTeX match surrounding text size */
+        .katex { font-size: 1em; vertical-align: middle; }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'merriweather': ['Merriweather', 'serif'],
+                    },
+                    colors: {
+                        'custom-red': '#DC143C',
+                        'custom-red-light': '#E6456B',
+                        'custom-red-dark': '#B91C3C',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-white text-custom-red font-merriweather">
+
+    <!-- Nav bar -->
+    <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-100 z-50">
+        <div class="max-w-6xl mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold text-custom-red">
+                    Parth Kotwal
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-custom-red hover:text-custom-red-light transition-colors duration-300 font-medium">About</a>
+                    <a href="#experience" class="text-custom-red hover:text-custom-red-light transition-colors duration-300 font-medium">Experience</a>
+                    <a href="#projects" class="text-custom-red hover:text-custom-red-light transition-colors duration-300 font-medium">Projects</a>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="https://github.com/parthkotwal/" target="_blank" class="text-custom-red hover:text-custom-red-light transition-colors duration-300">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/parthkotwal/" target="_blank" class="text-custom-red hover:text-custom-red-light transition-colors duration-300">
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </a>
+                    <a href="mailto:parthdkotwal@gmail.com" target="_blank" class="text-custom-red hover:text-custom-red-light transition-colors duration-300">
+                        <i class="fas fa-envelope text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex flex-col justify-center items-center px-6 pt-24">
+        <div class="text-center">
+            <h1 class="text-5xl md:text-6xl font-bold text-custom-red mb-8 leading-tight">
+                Parth Kotwal
+            </h1>
+            <h2 class="text-xl md:text-2xl text-custom-red-light font-medium mt-6">
+                Aspiring Computer Scientist
+            </h2>
+            <br>
+            <div class="mb-4">
+                <img src="images/headshot.jpeg" alt="Parth Kotwal" class="w-80 h-auto md:w-96 md:h-auto mx-auto object-cover shadow-2xl border-2 border-custom-red/20">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-6 bg-gray-50/30">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl font-bold text-custom-red mb-12 text-center">About Me</h2>
+            <div class="prose prose-lg max-w-none text-custom-red">
+                <p class="text-xl leading-relaxed mb-6">
+                    Hello, I'm Parth, a Computer Science student at the <span class="uw-purple">University of Washington, Seattle,</span> with a <span class="fiery-text">fiery</span> passion for <span class="passion-ml">machine learning</span> and <span class="passion-build">building tools for my own problems, then scaling them</span>. I’m currently interested in recommendation systems and in evaluating multi-turn agents through my work at the UW Computer Systems Lab.
+                </p>
+
+                
+                <div class="mt-12">
+                    <h3 class="text-2xl font-semibold text-custom-red mb-6">In my spare time, I enjoy:</h3>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="flex items-start space-x-3">
+                            <div class="w-2 h-2 bg-custom-red rounded-full mt-3 flex-shrink-0"></div>
+                            <span class="text-lg">Playing the latest FIFA or badminton!</span>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-2 h-2 bg-custom-red rounded-full mt-3 flex-shrink-0"></div>
+                            <span class="text-lg">Following my favorite football team FC Barcelona</span>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-2 h-2 bg-custom-red rounded-full mt-3 flex-shrink-0"></div>
+                            <span class="text-lg">Reviewing restaurants, cafes, and bakeries on <a href="https://beliapp.co/app/kotwal" class="beli-link">Beli</a></span>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-2 h-2 bg-custom-red rounded-full mt-3 flex-shrink-0"></div>
+                            <span class="text-lg">Expanding my fragrance collection ($n = 10$)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 px-6">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl font-bold text-custom-red mb-12 text-center">Experience</h2>
+            <div class="space-y-12">
+                <div class="border-l-4 border-custom-red pl-8 relative">
+                    <div class="absolute -left-3 top-0 w-6 h-6 bg-custom-red rounded-full"></div>
+                    <h3 class="text-2xl font-semibold text-custom-red mb-2">Machine Learning Researcher</h3>
+                    <p class="text-custom-red-light font-medium text-lg mb-4">University of Washington Computer Systems Lab • October 2025 - Present</p>
+                </div>
+
+                <div class="border-l-4 border-custom-red pl-8 relative">
+                    <div class="absolute -left-3 top-0 w-6 h-6 bg-custom-red rounded-full"></div>
+                    <h3 class="text-2xl font-semibold text-custom-red mb-2">Software Engineer Intern - ML</h3>
+                    <p class="text-custom-red-light font-medium text-lg mb-4">miniOrange • July 2024 - September 2024</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 px-6 bg-gray-50/30">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl font-bold text-custom-red mb-12 text-center">Projects</h2>
+            <div class="grid gap-8">
+
+                <!-- Olds -->
+                <div class="bg-white border border-gray-100 rounded-lg p-8 hover:shadow-lg transition-shadow duration-300">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-2xl font-semibold text-custom-red">Olds</h3>
+                        <div class="flex gap-3 items-center">
+                            <a href="https://readolds.fyi" target="_blank"
+                               class="text-custom-red hover:text-custom-red-light transition-colors duration-300">
+                                <i class="fas fa-globe text-2xl"></i>
+                            </a>
+                            <a href="https://github.com/parthkotwal/olds" target="_blank"
+                               class="text-custom-red hover:text-custom-red-light transition-colors duration-300">
+                                <i class="fab fa-github text-2xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">Go</span>
+                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">FastAPI</span>
+                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">React</span>
+                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">PostgreSQL + pgvector</span>
+                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">Docker</span>
+                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">spaCy</span>
+                    </div>
+                    <p class="text-custom-red text-lg leading-relaxed mb-4">A news site with a recommendation system that tracks both user interactions and content similarity. Inspired by my childhood routine of reading only the newspaper sections that interested me every morning</p>
+                </div>
+
+                <!-- QueQueue -->
+                <div class="bg-white border border-gray-100 rounded-lg p-8 hover:shadow-lg transition-shadow duration-300">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-2xl font-semibold text-custom-red">QueQueue</h3>
+                        <a href="https://github.com/parthkotwal/quequeue" target="_blank" 
+                           class="text-custom-red hover:text-custom-red-light transition-colors duration-300">
+                            <i class="fab fa-github text-2xl"></i>
+                        </a>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">Django</span>
+                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">Vue.js</span>
+                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">Scikit-learn</span>
+                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">AWS (ECR, EC2, S3, RDS, Cloudfront)</span>
+                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">Docker</span>
+                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">PostgreSQL</span>
+                    </div>
+                    <p class="text-custom-red text-lg leading-relaxed">Django + Vue app to save, restore and recommend Spotify queues. Addresses a personal trauma of losing the ideal Spotify queue on many occasions</p>
+                </div>
+
+                <!-- braai CNN -->
+                <div class="bg-white border border-gray-100 rounded-lg p-8 hover:shadow-lg transition-shadow duration-300">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-2xl font-semibold text-custom-red">Transient Detection with braai CNN</h3>
+                        <a href="https://github.com/parthkotwal/braai-cnn" target="_blank" 
+                           class="text-custom-red hover:text-custom-red-light transition-colors duration-300">
+                            <i class="fab fa-github text-2xl"></i>
+                        </a>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">PyTorch</span>
+                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">CuPy</span>
+                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">NumPy</span>
+                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">Scikit-learn</span>
+                    </div>
+                    <p class="text-custom-red text-lg leading-relaxed">Custom CuPy/NumPy CNN for astrophysical transient detection. Based on the "Real-bogus classification for the Zwicky Transient Facility using deep learning" <a href="https://arxiv.org/abs/1907.11259" target="_blank" class="text-custom-red hover:text-custom-red-light underline">paper</a></p>
+                </div>
+
+                <!-- MUNNW SMS -->
+                <div class="bg-white border border-gray-100 rounded-lg p-8 hover:shadow-lg transition-shadow duration-300">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-2xl font-semibold text-custom-red">Model United Nations Northwest SMS Admin</h3>
+                        <a href="https://github.com/parthkotwal/munnorthwest_sms" target="_blank" 
+                           class="text-custom-red hover:text-custom-red-light transition-colors duration-300">
+                            <i class="fab fa-github text-2xl"></i>
+                        </a>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">FastAPI</span>
+                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">JS</span>
+                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">PostgreSQL</span>
+                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">Tailwind CSS</span>
+                    </div>
+                    <p class="text-custom-red text-lg leading-relaxed">FastAPI + Twilio SMS admin for conference announcements and scheduling. Currently used by the largest Model United Nations conferences in the Pacific Northwest</p>
+                </div>
+
+                <!-- Star Class Forest -->
+                <div class="bg-white border border-gray-100 rounded-lg p-8 hover:shadow-lg transition-shadow duration-300">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-2xl font-semibold text-custom-red">Automated Stellar Classification</h3>
+                        <a href="https://github.com/parthkotwal/Star-Class-Forest" target="_blank" 
+                           class="text-custom-red hover:text-custom-red-light transition-colors duration-300">
+                            <i class="fab fa-github text-2xl"></i>
+                        </a>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">Scikit-learn</span>
+                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">Pandas</span>
+                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">NumPy</span>
+                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">Matplotlib</span>
+                    </div>
+                    <p class="text-custom-red text-lg leading-relaxed">Random-forest-based stellar spectral classifier with high accuracy and interpretability.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 border-t border-gray-100">
+        <div class="max-w-4xl mx-auto text-center">
+            <p class="text-custom-red text-lg">&copy; 2026 Parth Kotwal. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Toggle Script -->
+    <script>
+        // Add smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add mobile menu functionality
+        const nav = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-sm');
+            } else {
+                nav.classList.remove('shadow-sm');
+            }
+        });
+    </script>
+</body>
+</html>

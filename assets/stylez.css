@@ -1,0 +1,292 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #FFFDD0; /* Cream background */
+    color: #2C2C2C; /* Dark Charcoal text */
+    /* z-index: 500; */
+}
+
+/* General styles for header */
+header {
+    background-color: #FFFDD0; /* Cream */
+    padding: 20px;
+    text-align: center;
+}
+
+/* General styles for navigation */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding-top: 10px;
+    background-color: #FFFDD0; /* Match background to header */
+    text-align: center; /* Center the navigation bar */
+}
+
+.nav-links {
+    display: flex; /* Use inline-flex to center the items */
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.nav-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #2C2C2C; /* Dark Charcoal */
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #dedcad;
+}
+
+.contact-icons {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.contact-icons a {
+    width: 20px;
+    margin: 0 10px;
+    color: #2C2C2C;
+}
+
+.contact-icons a:hover {
+    color: #dedcad;
+}
+
+/* Adjust padding for header content */
+.header-content {
+    width: 100%; /* Ensure full width */
+    padding-top: 80px; /* Space for fixed nav */
+    text-align: center; /* Center text */
+    box-sizing: border-box; /* Include padding/border in width */
+}
+.header-content h1, .header-content p {
+    margin: 0; /* Remove default margin for better centering */
+    padding: 0; /* Remove default padding if any */
+}
+
+.header-content p {
+    font-size: 1.2em;
+    color: #2C2C2C; /* Dark Charcoal */
+}
+
+section {
+    width: 100%;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.sec-title {
+    padding-top: 0;
+    padding-bottom: 10px;
+}
+
+.abt {
+    background-color: #dedcad;
+}
+
+.about-container {
+    text-align: justify; /* Center the image above the text */
+    max-width: 900px; /* Add maximum width to restrict the text width */
+    margin: 0 auto; /* Center the text container horizontally */
+    padding: 0 20px; /* Add padding to create an invisible boundary */
+    
+}
+
+.about-image {
+    width: 70vh; /* Size of the square image */
+    height: 70vh; /* Ensure it's a square */
+    display: block;
+    margin: 0 auto 50px auto; /* Center image horizontally and add margin below */
+}
+
+section p, section ul, section li {
+    font-size: 1em;
+    color: #2C2C2C; /* Dark Charcoal */
+}
+
+.experience-item, .education-item, .project-item {
+    margin: 20px 0;
+}
+
+.projects-container h2 {
+    text-align: center;
+}
+
+.projects-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: left;
+}
+
+.project-item {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #FFF; /* White background for project items */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    position: relative;
+}
+
+.project-item:hover {
+    transform:translateY(-5px);
+    background-color: #FFFDD0; /* Lighter shade */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.project-item h3 {
+    margin-bottom: 10px;
+}
+
+.project-item p {
+    font-size: 1em;
+    color: #2C2C2C; /* Dark Charcoal */
+}
+
+.project-item a {
+    color: #B8860B; /* Gold */
+    font-size: xx-large;
+    text-decoration: none;
+    font-weight: bold;
+    
+}
+
+.project-item a:hover {
+    color: #dedcad;
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.project-link {
+    margin-left: auto;
+    text-decoration: none;
+}
+
+.project-link img {
+    width: 24px; 
+    height: 24px;
+    margin-left: 10px;
+}
+
+.tech-icons {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.tech-icons img {
+    width: 30px; 
+    height: 30px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.project-item p {
+    font-size: 1em;
+    color: #2C2C2C;
+    margin-top: 10px;
+}
+
+/* Skills Section */
+.skills-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: left;
+}
+
+.skills-container h2{
+    text-align: center;
+}
+
+.skills-group {
+    margin: 40px 0; /* Space between skill groups */
+}
+
+.skills-group h3 {
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+.skill-icons {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.skill-icons img {
+    width: 50px; /* Adjust size as needed */
+    height: 50px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease; /* Optional: Add a hover effect */
+}
+
+/* Skill icon container */
+.skill-icon {
+    position: relative;
+    display: inline-block;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Hide the skill name by default */
+.skill-name {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.75); /* Semi-transparent background */
+    color: #FFF;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8em;
+    opacity: 0;
+    white-space: nowrap;
+    pointer-events: none; /* Prevent the name from interfering with hover */
+    transition: opacity 0.3s ease-in-out;
+    z-index: 1;
+}
+
+/* Show the skill name on hover */
+.skill-icon:hover .skill-name {
+    opacity: 1;
+    bottom: -10px; /* Moves the label further down when hovered */
+}
+
+/* Adjust image hover effect (optional) */
+.skill-icon img {
+    width: 50px; /* Adjust size as needed */
+    height: 50px;
+    transition: transform 0.3s ease;
+}
+
+.skill-icon img:hover {
+    transform: scale(1.1);
+}

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parth Kotwal</title>
+    <link rel="stylesheet" href="assets/stylez.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Media queries for responsiveness */
+        /* Media queries for responsiveness */
+        @media (max-width: 768px) {
+            .nav-links {
+                flex-direction: row; /* Ensure horizontal alignment */
+            }
+
+            .nav-links ul {
+                flex-direction: row; /* Ensure horizontal alignment */
+                /* padding-left: 100%; */
+            }
+
+            nav ul li {
+                margin: 5px 15px; /* Reduce margin for better fit */
+            }
+
+            .contact-icons {
+                margin: 0 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-links ul {
+                padding: 0 10px;
+            }
+
+            .nav-links ul li {
+                margin: 5px 15px;
+            }
+
+            .contact-icons a {
+                margin: 0 15px;
+                font-size: 18px;
+            }
+
+            .header-content {
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 430px) {
+            section {
+                padding: 20px 10px; /* Reduce padding on smaller screens */
+            }
+            
+            .about-container,
+            .skills-container,
+            .experience-item,
+            .education-item,
+            .project-item {
+                padding: 0 10px; /* Reduce padding/margin */
+                margin: 10px 0;
+            }
+            
+            .skill-icons img {
+                width: 40px; /* Adjust icon size for smaller screens */
+                height: 40px;
+            }
+            
+            .about-image {
+                width: 100%; /* Make the image responsive */
+                height: auto;
+            }
+            
+            .nav-links ul {
+                flex-direction: column; /* Stack nav links vertically on small screens */
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 5px 0; /* Reduce margin between nav items */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                </ul>
+            </div>
+
+            <div class="contact-icons">
+                <a href="https://github.com/parthkotwal/" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/parth-kotwal-48b160247/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:parthkotwa07@gmail.com" target="_blank"><i class="fab fa-solid fa-envelope"></i></a>
+            </div>
+        </nav>
+
+        <div class="header-content">
+            <h1>Parth Kotwal</h1>
+            <p>Aspiring Software Engineer</p>
+        </div>
+    </header>
+
+    <img src="images/me.jpg" alt="Parth Kotwal" class="about-image">
+    
+    <section id="about" class="abt">
+        <div class="sec-title">
+            <h2>About Me</h2>
+        </div>
+        <div class="about-container">
+            <p>Hi, I'm Parth, a high school senior with a background in data science and machine learning, along with additional experience in web development. I am really interested in exploring about how machine learning and artificial intelligence can be applied to my favorite scientific disciplines such as astrophysics, quantum physics, and medicine.</p><br>
+            <p>In my spare time, I enjoy:</p><br>
+            <ul>
+                <li>Playing Red Dead Redemption 2 or FIFA</li>
+                <li>Following my favorite football team FC Barcelona</li>
+                <li>Reviewing restaurants everytime I eat out</li>
+                <li>Listening to music by a wide range of artists from Travis Scott to Asha Bhosle</li>
+                <li>Failing to achieve O(1) solutions on LeetCode</li>
+                <li>Or watching Veritasium and 3Blue1Brown on YouTube!</li><br>
+            </ul>
+            <p>Please feel free to explore my projects and get in touch if you'd like to collaborate or learn more about my work!</p>
+        </div>        
+    </section>
+
+    <section id="experience">
+        <h2>Experience</h2>
+        <div class="about-container">
+            <div class="experience-item">
+                <h3>Machine Learning Intern, miniOrange</h3>
+                <i>July 2024 - September 2024</i>
+                <ul>
+                    <li>Developed and deployed classification models to detect type of Android device malware using <b>Scikit-learn</b> and <b>Pandas</b></li>
+                    <li>Decision tree model had <b>93.15% accuracy</b> and <b>92.59% weighted precision</b> after hyperparameter tuning and feature engineering on dataset with over <b>20,000 instances</b></li>
+                </ul>
+            </div>
+            <div class="experience-item">
+                <h3>Financial Data Science Intern, Stonehaven Capital Management</h3>
+                <i>August 2023 - November 2023</i>
+                <ul>
+                    <li>Extracted and cleaned financial <b>6</b> datasets from Twitter and Yahoo Finance APIs using <b>Pandas</b>.</li>
+                    <li>Created data visualizations using <b>Matplotlib</b> of ML model that predicted IPO success based on competitor profiles.</li>
+                </ul>
+            </div>
+            <!-- gain more experience -->
+        </div>
+    </section>
+
+    <section id="projects" class="abt">
+        <div class="projects-container">
+            <h2>Projects</h2>
+            <div class="project-item">
+                <div class="project-header">
+                    <h3>Automated Stellar Classification</h3>
+                    <a href="https://github.com/parthkotwal/Star-Class-Forest" target="_blank"><i class="fab fa-github"></i></a>
+                </div>
+                <div class="tech-icons">
+                    <img src="images/python.png">
+                    <img src="images/scikit.png">
+                    <img src="images/streamlit.png">
+                </div>
+                <p>Trained 5 models to classify stars, achieving 95% accuracy and 96% precision with a tuned random forest. Merged astrophysics and machine learning in data visualizations.</p>
+            </div>
+
+            <div class="project-item">
+                <div class="project-header">
+                    <h3>Uber Global Hackathon</h3>
+                    <a href="https://github.com/PeeKay26/Barcelona-Transportation" target="_blank"><i class="fab fa-github"></i></a>
+                </div>
+                <div class="tech-icons">
+                    <img src="images/python.png">
+                    <img src="images/r.png">
+                    <img src="images/pandas.png">
+                    <img src="images/numpy.png">
+                    <img src="images/matplotlib.png">
+                    <!-- Add more technology icons as needed -->
+                </div>
+                <p>Conducted exploratory data analysis with Python and R to construct a business strategy for Uber to expand in Barcelona, Spain. Developed a highly accurate and interactive map of bus stops and public transportation with Folium</p>
+            </div>
+
+            <div class="project-item">
+                <div class="project-header">
+                    <h3>Python Projects</h3>
+                    <a href="https://github.com/PeeKay26/python-projects" target="_blank"><i class="fab fa-github"></i></a>
+                </div>
+                <div class="tech-icons">
+                    <img src="images/python.png">
+                </div>
+                <p>A brief collection of mini projects I made while learning Python</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="skills-container">
+            <h2>Skills</h2>
+    
+            <!-- Languages -->
+            <div class="skills-group">
+                <h3>Languages</h3>
+                <div class="skill-icons">
+                    <div class="skill-icon">
+                        <img src="images/python.png">
+                        <span class="skill-name">Python</span>
+                    </div>
+                    <div class="skill-icon">
+                        <img src="images/java.png">
+                        <span class="skill-name">Java</span>
+                    </div>
+                    <div class="skill-icon">
+                        <img src="images/r.png">
+                        <span class="skill-name">R</span>
+                    </div>
+                    <div class="skill-icon">
+                        <img src="images/cpp.png">
+                        <span class="skill-name">C++</span>
+                    </div>
+                    <div class="skill-icon">
+                        <img src="images/js.png">
+                        <span class="skill-name">JavaScript</span>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Frameworks -->
+            <div class="skills-group">
+                <h3>Frameworks</h3>
+                <div class="skill-icons">
+                    <div class="skill-icon">
+                        <img src="images/pandas.png">
+                        <span class="skill-name">Pandas</span>
+                    </div>
+                    <div class="skill-icon">
+                        <img src="images/scikit.png">
+                        <span class="skill-name">Scikit-learn</span>
+                    </div>
+                    <div class="skill-icon">
+                        <img src="images/numpy.png">
+                        <span class="skill-name">NumPy</span>
+                    </div>
+                    <div class="skill-icon">
+                        <img src="images/flask.png">
+                        <span class="skill-name">Flask</span>
+                    </div>
+                    <div class="skill-icon">
+                        <img src="images/matplotlib.png">
+                        <span class="skill-name">Matplotlib</span>
+                    </div>
+                    <div class="skill-icon">
+                        <img src="images/streamlit.png">
+                        <span class="skill-name">Streamlit</span>
+                    </div>
+                    <div class="skill-icon">
+                        <img src="images/dplyr.png">
+                        <span class="skill-name">dplyr</span>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Tools -->
+            <div class="skills-group">
+                <h3>Tools</h3>
+                <div class="skill-icons">
+                    <div class="skill-icon">
+                        <img src="images/git.png">
+                        <span class="skill-name">Git</span>
+                    </div>
+                    <div class="skill-icon">
+                        <img src="images/vscode.png">
+                        <span class="skill-name">VS Code</span>
+                    </div>
+                    <div class="skill-icon">
+                        <img src="images/figma.png">
+                        <span class="skill-name">Figma</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <footer>
+        <p style="text-align: center;">&copy; 2024 Parth Kotwal. All rights reserved.</p>
+    </footer>
+</body>
+</html>
