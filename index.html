@@ -11,7 +11,7 @@
 
     <title>Parth Kotwal | Computer Science Student | Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="icon" type="image/x-icon" href="images/golden-retriever-dog-breed-info.jpeg">
+    <link id="site-favicon" rel="icon" type="image/svg+xml" href="images/logo-3.svg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <!-- KaTeX: render math like LaTeX in the page -->
@@ -21,6 +21,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary: #DC143C;
+            --primary-light: #E6456B;
+            --primary-dark: #B91C3C;
+        }
+
+        html.theme-blue {
+            --primary: #236899;
+            --primary-light: #2f7eb4;
+            --primary-dark: #1b5378;
+        }
+
         .fiery-text {
             color: #ff6a00; 
             animation: flame 1s infinite alternate ease-in-out;
@@ -39,7 +51,7 @@
         }
 
         .passion-ml {
-            color: #0891b2;
+            color: #38bd31;
             font-style: italic;
         }
 
@@ -55,7 +67,7 @@
         }
 
         .beli-link:hover {
-            color: #E6456B;
+            color: var(--primary-light);
         }
 
     </style>
@@ -71,9 +83,9 @@
                         'merriweather': ['Merriweather', 'serif'],
                     },
                     colors: {
-                        'custom-red': '#DC143C',
-                        'custom-red-light': '#E6456B',
-                        'custom-red-dark': '#B91C3C',
+                        'custom-red': 'var(--primary)',
+                        'custom-red-light': 'var(--primary-light)',
+                        'custom-red-dark': 'var(--primary-dark)',
                     }
                 }
             }
@@ -95,7 +107,10 @@
                     <a href="#experience" class="text-custom-red hover:text-custom-red-light transition-colors duration-300 font-medium">Experience</a>
                     <a href="#projects" class="text-custom-red hover:text-custom-red-light transition-colors duration-300 font-medium">Projects</a>
                 </div>
-                <div class="flex space-x-4">
+                <div class="flex items-center space-x-4">
+                    <button id="theme-toggle" type="button" class="px-3 py-1 rounded-full border border-custom-red/40 text-custom-red text-sm font-medium hover:bg-custom-red/10 transition-colors duration-300" aria-label="Toggle primary color theme" aria-pressed="false">
+                        Blue
+                    </button>
                     <a href="https://github.com/parthkotwal/" target="_blank" class="text-custom-red hover:text-custom-red-light transition-colors duration-300">
                         <i class="fab fa-github text-xl"></i>
                     </a>
@@ -330,6 +345,34 @@
             } else {
                 nav.classList.remove('shadow-sm');
             }
+        });
+
+        // Primary color theme toggle
+        const THEME_KEY = 'portfolio-theme';
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const root = document.documentElement;
+        const favicon = document.getElementById('site-favicon');
+        const RED_FAVICON = 'images/logo-3.svg';
+        const BLUE_FAVICON = 'images/logo-2.svg';
+        const RED_PRIMARY = '#DC143C';
+        const BLUE_PRIMARY = '#236899';
+
+        const applyTheme = (theme) => {
+            const blueActive = theme === 'blue';
+            root.classList.toggle('theme-blue', blueActive);
+            themeToggleBtn.textContent = blueActive ? 'Red' : 'Blue';
+            themeToggleBtn.setAttribute('aria-pressed', String(blueActive));
+            favicon.setAttribute('href', blueActive ? BLUE_FAVICON : RED_FAVICON);
+            themeToggleBtn.style.color = blueActive ? RED_PRIMARY : BLUE_PRIMARY;
+        };
+
+        const savedTheme = localStorage.getItem(THEME_KEY);
+        applyTheme(savedTheme === 'blue' ? 'blue' : 'red');
+
+        themeToggleBtn.addEventListener('click', () => {
+            const nextTheme = root.classList.contains('theme-blue') ? 'red' : 'blue';
+            applyTheme(nextTheme);
+            localStorage.setItem(THEME_KEY, nextTheme);
         });
     </script>
 </body>
