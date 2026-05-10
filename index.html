@@ -108,6 +108,9 @@
                     <a href="#projects" class="text-custom-red hover:text-custom-red-light transition-colors duration-300 font-medium">Projects</a>
                 </div>
                 <div class="flex items-center space-x-4">
+                    <button id="mobile-menu-toggle" type="button" class="md:hidden text-custom-red hover:text-custom-red-light transition-colors duration-300" aria-label="Toggle navigation menu" aria-controls="mobile-menu" aria-expanded="false">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
                     <button id="theme-toggle" type="button" class="px-3 py-1 rounded-full border border-custom-red/40 text-custom-red text-sm font-medium hover:bg-custom-red/10 transition-colors duration-300" aria-label="Toggle primary color theme" aria-pressed="false">
                         Blue
                     </button>
@@ -121,6 +124,11 @@
                         <i class="fas fa-envelope text-xl"></i>
                     </a>
                 </div>
+            </div>
+            <div id="mobile-menu" class="md:hidden hidden pt-4 pb-2 space-y-3">
+                <a href="#about" class="block text-custom-red hover:text-custom-red-light transition-colors duration-300 font-medium">About</a>
+                <a href="#experience" class="block text-custom-red hover:text-custom-red-light transition-colors duration-300 font-medium">Experience</a>
+                <a href="#projects" class="block text-custom-red hover:text-custom-red-light transition-colors duration-300 font-medium">Projects</a>
             </div>
         </div>
     </nav>
@@ -339,6 +347,33 @@
 
         // Add mobile menu functionality
         const nav = document.querySelector('nav');
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuIcon = mobileMenuToggle.querySelector('i');
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a[href^="#"]');
+
+        const setMobileMenuState = (open) => {
+            mobileMenu.classList.toggle('hidden', !open);
+            mobileMenuToggle.setAttribute('aria-expanded', String(open));
+            mobileMenuIcon.classList.toggle('fa-bars', !open);
+            mobileMenuIcon.classList.toggle('fa-xmark', open);
+        };
+
+        mobileMenuToggle.addEventListener('click', () => {
+            const isOpen = !mobileMenu.classList.contains('hidden');
+            setMobileMenuState(!isOpen);
+        });
+
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => setMobileMenuState(false));
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 768) {
+                setMobileMenuState(false);
+            }
+        });
+
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
                 nav.classList.add('shadow-sm');
