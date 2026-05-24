@@ -1,0 +1,12 @@
+{
+  "projects": [
+    {
+      "name": "Decido",
+      "description": "Multimodal web agent with a focus on action ranking"
+    },
+    {
+      "name": "InFerence",
+      "description": "An inference server optimized for agentic workloads"
+    }
+  ]
+}

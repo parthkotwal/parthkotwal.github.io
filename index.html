@@ -159,6 +159,13 @@
                     Hello, I'm Parth, a Computer Science student at the <span class="uw-purple">University of Washington, Seattle,</span> with a <span class="fiery-text">fiery</span> passion for <span class="passion-ml">machine learning systems</span>. I’m currently interested in recommendation systems and in developing fail-safe, multi-turn agents through my work at the UW Computer Systems Lab.
                 </p>
 
+                <div class="mt-10 ">
+                    <h3 class="text-2xl  text-custom-red mb-4"><i>Building right now</i></h3>
+                    <div id="now-projects" class="space-y-4">
+                        <p class="text-custom-red text-lg">Loading current projects...</p>
+                    </div>
+                </div>
+
                 
                 <div class="mt-12">
                     <h3 class="text-2xl font-semibold text-custom-red mb-6">In my spare time, I enjoy:</h3>
@@ -409,6 +416,46 @@
             applyTheme(nextTheme);
             localStorage.setItem(THEME_KEY, nextTheme);
         });
+
+        // Load "currently working on" projects from now.json
+        const nowProjectsContainer = document.getElementById('now-projects');
+
+        const renderNowProjects = (projects) => {
+            if (!Array.isArray(projects) || projects.length === 0) {
+                nowProjectsContainer.innerHTML = '<p class="text-custom-red text-lg">No active projects listed right now.</p>';
+                return;
+            }
+
+            nowProjectsContainer.innerHTML = '';
+            projects.forEach((project) => {
+                const item = document.createElement('div');
+                item.className = 'border-l-4 border-custom-red pl-4';
+
+                const name = document.createElement('h4');
+                name.className = 'text-xl font-semibold text-custom-red';
+                name.textContent = project.name || 'Untitled project';
+
+                const description = document.createElement('p');
+                description.className = 'text-custom-red text-lg leading-relaxed mt-1';
+                description.textContent = project.description || '';
+
+                item.appendChild(name);
+                item.appendChild(description);
+                nowProjectsContainer.appendChild(item);
+            });
+        };
+
+        fetch('now.json')
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error('Failed to load now.json');
+                }
+                return response.json();
+            })
+            .then((data) => renderNowProjects(data.projects))
+            .catch(() => {
+                nowProjectsContainer.innerHTML = '<p class="text-custom-red text-lg">Unable to load current projects right now.</p>';
+            });
     </script>
 </body>
 </html>
