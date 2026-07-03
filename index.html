@@ -106,6 +106,7 @@
                     <a href="#about" class="text-custom-red hover:text-custom-red-light transition-colors duration-300 font-medium">About</a>
                     <a href="#experience" class="text-custom-red hover:text-custom-red-light transition-colors duration-300 font-medium">Experience</a>
                     <a href="#projects" class="text-custom-red hover:text-custom-red-light transition-colors duration-300 font-medium">Projects</a>
+                    <!-- <a href="#contact" class="text-custom-red hover:text-custom-red-light transition-colors duration-300 font-medium">Contact</a> -->
                 </div>
                 <div class="flex items-center space-x-4">
                     <button id="mobile-menu-toggle" type="button" class="md:hidden text-custom-red hover:text-custom-red-light transition-colors duration-300" aria-label="Toggle navigation menu" aria-controls="mobile-menu" aria-expanded="false">
@@ -129,6 +130,7 @@
                 <a href="#about" class="block text-custom-red hover:text-custom-red-light transition-colors duration-300 font-medium">About</a>
                 <a href="#experience" class="block text-custom-red hover:text-custom-red-light transition-colors duration-300 font-medium">Experience</a>
                 <a href="#projects" class="block text-custom-red hover:text-custom-red-light transition-colors duration-300 font-medium">Projects</a>
+                <!-- <a href="#contact" class="block text-custom-red hover:text-custom-red-light transition-colors duration-300 font-medium">Contact</a> -->
             </div>
         </div>
     </nav>
@@ -199,7 +201,7 @@
             <div class="space-y-12">
                 <div class="border-l-4 border-custom-red pl-8 relative">
                     <div class="absolute -left-3 top-0 w-6 h-6 bg-custom-red rounded-full"></div>
-                    <h3 class="text-2xl font-semibold text-custom-red mb-2">Incoming Software Engineer Intern</h3>
+                    <h3 class="text-2xl font-semibold text-custom-red mb-2">Software Engineer Intern</h3>
                     <p class="text-custom-red-light font-medium text-lg mb-4">Infoblox • June 2026 - August 2026</p>
                 </div>
 
@@ -226,8 +228,13 @@
 
                 <!-- Olds -->
                 <div class="bg-white border border-gray-100 rounded-lg p-8 hover:shadow-lg transition-shadow duration-300">
-                    <div class="flex justify-between items-start mb-4">
-                        <h3 class="text-2xl font-semibold text-custom-red">Olds</h3>
+                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3 mb-4">
+                        <div class="flex flex-wrap items-center gap-3">
+                            <h3 class="text-2xl font-semibold text-custom-red">Olds</h3>
+                            <span class="text-custom-red" aria-label="Featured project" title="Featured project">
+                                <i class="fas fa-star text-lg"></i>
+                            </span>
+                        </div>
                         <div class="flex gap-3 items-center">
                             <a href="https://readolds.fyi" target="_blank"
                                class="text-custom-red hover:text-custom-red-light transition-colors duration-300">
@@ -252,12 +259,23 @@
 
                 <!-- QueQueue -->
                 <div class="bg-white border border-gray-100 rounded-lg p-8 hover:shadow-lg transition-shadow duration-300">
-                    <div class="flex justify-between items-start mb-4">
-                        <h3 class="text-2xl font-semibold text-custom-red">QueQueue</h3>
-                        <a href="https://github.com/parthkotwal/quequeue" target="_blank" 
-                           class="text-custom-red hover:text-custom-red-light transition-colors duration-300">
-                            <i class="fab fa-github text-2xl"></i>
-                        </a>
+                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3 mb-4">
+                        <div class="flex flex-wrap items-center gap-3">
+                            <h3 class="text-2xl font-semibold text-custom-red">QueQueue</h3>
+                            <span class="text-custom-red" aria-label="Featured project" title="Featured project">
+                                <i class="fas fa-star text-lg"></i>
+                            </span>
+                        </div>
+                        <div class="flex gap-3 items-center">
+                            <a href="https://quequeue.app" target="_blank"
+                               class="text-custom-red hover:text-custom-red-light transition-colors duration-300">
+                                <i class="fas fa-globe text-2xl"></i>
+                            </a>
+                            <a href="https://github.com/parthkotwal/quequeue" target="_blank" 
+                               class="text-custom-red hover:text-custom-red-light transition-colors duration-300">
+                                <i class="fab fa-github text-2xl"></i>
+                            </a>
+                        </div>
                     </div>
                     <div class="flex flex-wrap gap-2 mb-4">
                         <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">Django</span>
@@ -270,9 +288,50 @@
                     <p class="text-custom-red text-lg leading-relaxed">Django + Vue app to save, restore and recommend Spotify queues easily. Addresses a personal trauma of losing the ideal Spotify queue on many occasions</p>
                 </div>
 
+                <!-- MUNNW SMS -->
+                <div class="bg-white border border-gray-100 rounded-lg p-8 hover:shadow-lg transition-shadow duration-300">
+                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3 mb-4">
+                        <div class="flex flex-wrap items-center gap-3">
+                            <h3 class="text-2xl font-semibold text-custom-red">Model United Nations Northwest SMS Admin</h3>
+                            <span class="text-custom-red" aria-label="Featured project" title="Featured project">
+                                <i class="fas fa-star text-lg"></i>
+                            </span>
+                        </div>
+                        <a href="https://github.com/parthkotwal/munnorthwest_sms" target="_blank" 
+                           class="text-custom-red hover:text-custom-red-light transition-colors duration-300">
+                            <i class="fab fa-github text-2xl"></i>
+                        </a>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">FastAPI</span>
+                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">JS</span>
+                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">PostgreSQL</span>
+                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">Tailwind CSS</span>
+                    </div>
+                    <p class="text-custom-red text-lg leading-relaxed">Currently used by the largest Model United Nations conferences in the Pacific Northwest. FastAPI + Twilio SMS admin for announcements with bulk contact management and scheduling</p>
+                </div>
+
+                <!-- Decido -->
+                <div class="bg-white border border-gray-100 rounded-lg p-8 hover:shadow-lg transition-shadow duration-300">
+                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3 mb-4">
+                        <h3 class="text-2xl font-semibold text-custom-red">Decido</h3>
+                        <a href="https://github.com/parthkotwal/decido" target="_blank" 
+                           class="text-custom-red hover:text-custom-red-light transition-colors duration-300">
+                            <i class="fab fa-github text-2xl"></i>
+                        </a>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">Python</span>
+                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">FastAPI</span>
+                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">Playwright</span>
+                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">Modal</span>
+                    </div>
+                    <p class="text-custom-red text-lg leading-relaxed">Multimodal (DOM + Vision) web agent for studying why multi-step browser agents fail. Based on the <a href="https://arxiv.org/abs/2604.08516" target="_blank" class="text-custom-red hover:text-custom-red-light underline">MolmoWeb paper</a></p>
+                </div>
+
                 <!-- braai CNN -->
                 <div class="bg-white border border-gray-100 rounded-lg p-8 hover:shadow-lg transition-shadow duration-300">
-                    <div class="flex justify-between items-start mb-4">
+                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3 mb-4">
                         <h3 class="text-2xl font-semibold text-custom-red">Transient Detection with braai CNN</h3>
                         <a href="https://github.com/parthkotwal/braai-cnn" target="_blank" 
                            class="text-custom-red hover:text-custom-red-light transition-colors duration-300">
@@ -288,27 +347,9 @@
                     <p class="text-custom-red text-lg leading-relaxed">Custom CuPy/NumPy CNN for astrophysical transient detection. Based on the "Real-bogus classification for the Zwicky Transient Facility using deep learning" <a href="https://arxiv.org/abs/1907.11259" target="_blank" class="text-custom-red hover:text-custom-red-light underline">paper</a></p>
                 </div>
 
-                <!-- MUNNW SMS -->
-                <div class="bg-white border border-gray-100 rounded-lg p-8 hover:shadow-lg transition-shadow duration-300">
-                    <div class="flex justify-between items-start mb-4">
-                        <h3 class="text-2xl font-semibold text-custom-red">Model United Nations Northwest SMS Admin</h3>
-                        <a href="https://github.com/parthkotwal/munnorthwest_sms" target="_blank" 
-                           class="text-custom-red hover:text-custom-red-light transition-colors duration-300">
-                            <i class="fab fa-github text-2xl"></i>
-                        </a>
-                    </div>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">FastAPI</span>
-                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">JS</span>
-                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">PostgreSQL</span>
-                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">Tailwind CSS</span>
-                    </div>
-                    <p class="text-custom-red text-lg leading-relaxed">Currently used by the largest Model United Nations conferences in the Pacific Northwest. FastAPI + Twilio SMS admin for announcements with bulk contact management and scheduling</p>
-                </div>
-
                 <!-- Star Class Forest -->
                 <div class="bg-white border border-gray-100 rounded-lg p-8 hover:shadow-lg transition-shadow duration-300">
-                    <div class="flex justify-between items-start mb-4">
+                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3 mb-4">
                         <h3 class="text-2xl font-semibold text-custom-red">Automated Stellar Classification</h3>
                         <a href="https://github.com/parthkotwal/Star-Class-Forest" target="_blank" 
                            class="text-custom-red hover:text-custom-red-light transition-colors duration-300">
@@ -324,6 +365,25 @@
                     <p class="text-custom-red text-lg leading-relaxed">Random-forest-based stellar spectral classifier with high accuracy and interpretability.</p>
                 </div>
 
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 px-6 bg-white">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-bold text-custom-red mb-8">Contact</h2>
+            <div class="flex justify-center items-center gap-8">
+                <a href="https://github.com/parthkotwal/" target="_blank" class="text-custom-red hover:text-custom-red-light transition-colors duration-300" aria-label="GitHub">
+                    <i class="fab fa-github text-3xl"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/parthkotwal/" target="_blank" class="text-custom-red hover:text-custom-red-light transition-colors duration-300" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin text-3xl"></i>
+                </a>
+                <a href="mailto:pkotwal@uw.edu" target="_blank" class="text-custom-red hover:text-custom-red-light transition-colors duration-300" aria-label="Email">
+                    <i class="fas fa-envelope text-3xl"></i>
+                </a>
             </div>
         </div>
     </section>
