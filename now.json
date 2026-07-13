@@ -1,8 +1,8 @@
 {
   "projects": [
     {
-      "name": "InFerence",
-      "description": "An inference server optimized for agentic workloads"
+      "name": "Eggly",
+      "description": "Social media for tasters"
     }
   ]
 }
