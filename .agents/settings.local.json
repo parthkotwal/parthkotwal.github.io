@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(go test:*)",
+      "Bash(go build:*)",
+      "Bash(go get:*)",
+      "Read(//Users/parthkotwal/go/pkg/mod/github.com/pgvector/pgvector-go@v0.3.0/pgx/**)",
+      "Bash(go vet:*)",
+      "Bash(npm install:*)",
+      "Bash(npx vite:*)",
+      "Bash(python .claude/skills/webapp-testing/scripts/with_server.py --help)",
+      "Bash(python3 .claude/skills/webapp-testing/scripts/with_server.py --help)",
+      "Bash(curl -s http://localhost:5173)",
+      "Bash(curl -s http://localhost:8080/health)",
+      "Bash(pip3 install:*)",
+      "Bash(python3 -m playwright install chromium --quiet)",
+      "Bash(python3 -m playwright install chromium)",
+      "Bash(ls /Users/parthkotwal/Projects/olds/frontend/*.config.*)",
+      "Bash(python3 frontend/tests/test_frontend.py)",
+      "Bash(curl -s http://localhost:8080/stats)"
+    ]
+  }
+}
