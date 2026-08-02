@@ -1,0 +1,173 @@
+:root {
+    --primary: #dc143c;
+    --primary-light: #e6456b;
+    --primary-dark: #b91c3c;
+}
+
+html.theme-blue {
+    --primary: #236899;
+    --primary-light: #2f7eb4;
+    --primary-dark: #1b5378;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+}
+
+::selection {
+    background: var(--primary);
+    color: white;
+}
+
+.skip-link {
+    position: fixed;
+    z-index: 100;
+    top: 0.75rem;
+    left: 0.75rem;
+    padding: 0.6rem 0.85rem;
+    background: white;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+    transform: translateY(-160%);
+    transition: transform 0.2s ease;
+}
+
+.skip-link:focus {
+    transform: translateY(0);
+}
+
+:focus-visible {
+    outline: 3px solid var(--primary-light);
+    outline-offset: 3px;
+}
+
+.project-tag {
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    background: color-mix(in srgb, var(--primary) 10%, transparent);
+    color: var(--primary);
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.project-copy section {
+    margin-top: 3.5rem;
+}
+
+.project-copy h2 {
+    margin: 0 0 1rem;
+    color: var(--primary);
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.35;
+}
+
+.project-copy p {
+    margin: 0 0 1.25rem;
+    color: var(--primary);
+    font-size: 1.125rem;
+    line-height: 1.85;
+}
+
+.project-copy blockquote {
+    margin: 2rem 0;
+    padding: 0.25rem 0 0.25rem 1.5rem;
+    border-left: 4px solid var(--primary);
+    color: var(--primary);
+    font-size: 1.25rem;
+    font-style: italic;
+    line-height: 1.75;
+}
+
+.project-flow {
+    margin: 2rem 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid color-mix(in srgb, var(--primary) 28%, transparent);
+    border-bottom: 1px solid color-mix(in srgb, var(--primary) 28%, transparent);
+}
+
+.project-flow-step {
+    position: relative;
+    padding: 1.4rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.project-flow-step + .project-flow-step {
+    border-left: 1px solid color-mix(in srgb, var(--primary) 20%, transparent);
+}
+
+.project-flow-step + .project-flow-step::before {
+    content: "→";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    padding: 0.15rem;
+    background: white;
+    color: var(--primary);
+    transform: translate(-50%, -50%);
+}
+
+.project-flow-step span,
+.project-flow-step small {
+    color: var(--primary-light);
+    font-size: 0.8rem;
+}
+
+.project-flow-step strong {
+    color: var(--primary);
+    font-size: 1.1rem;
+}
+
+@media (max-width: 640px) {
+    .project-copy section {
+        margin-top: 3rem;
+    }
+
+    .project-copy p {
+        font-size: 1rem;
+        line-height: 1.8;
+    }
+
+    .project-copy blockquote {
+        padding-left: 1rem;
+        font-size: 1.05rem;
+    }
+
+    .project-flow {
+        grid-template-columns: 1fr;
+    }
+
+    .project-flow-step {
+        padding: 1.15rem 0.5rem;
+    }
+
+    .project-flow-step + .project-flow-step {
+        border-top: 1px solid color-mix(in srgb, var(--primary) 20%, transparent);
+        border-left: 0;
+    }
+
+    .project-flow-step + .project-flow-step::before {
+        top: 0;
+        left: 1.5rem;
+        transform: translateY(-50%) rotate(90deg);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+    }
+}

@@ -70,6 +70,24 @@
             color: var(--primary-light);
         }
 
+        .project-card {
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+        }
+
+        @media (hover: hover) {
+            .project-card:hover {
+                transform: translateY(-0.25rem);
+                border-color: color-mix(in srgb, var(--primary) 30%, #e5e7eb);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .project-card {
+                transition: none;
+            }
+        }
+
     </style>
     <style>
         /* Make KaTeX match surrounding text size */
@@ -226,8 +244,36 @@
             <h2 class="text-4xl font-bold text-custom-red mb-12 text-center">Projects</h2>
             <div class="grid gap-8">
 
+                <!-- Sift -->
+                <div class="project-card relative bg-white border border-gray-100 rounded-lg p-8 cursor-pointer hover:-translate-y-1 hover:border-custom-red/30 hover:shadow-lg transition-all duration-300 focus-within:ring-2 focus-within:ring-custom-red focus-within:ring-offset-4">
+                    <a href="sift/" class="absolute inset-0 z-10 rounded-lg focus:outline-none" aria-label="Read the Sift project page"></a>
+                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3 mb-4">
+                        <div class="flex flex-wrap items-center gap-3">
+                            <h3 class="text-2xl font-semibold text-custom-red">Sift</h3>
+                            <span class="text-custom-red" aria-label="Featured project" title="Featured project">
+                                <i class="fas fa-star text-lg"></i>
+                            </span>
+                        </div>
+                        <a href="https://github.com/parthkotwal/sift" target="_blank"
+                           class="relative z-20 text-custom-red hover:text-custom-red-light transition-colors duration-300"
+                           aria-label="View Sift on GitHub">
+                            <i class="fab fa-github text-2xl"></i>
+                        </a>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">Python</span>
+                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">FastAPI</span>
+                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">LightGBM</span>
+                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">Redis</span>
+                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">AWS</span>
+                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">Docker</span>
+                    </div>
+                    <p class="text-custom-red text-lg leading-relaxed"> A staged recommendation service over the Yelp Open Dataset. Narrows 14K candidates to ten in under 100ms.</p>
+                </div>
+
                 <!-- Olds -->
-                <div class="bg-white border border-gray-100 rounded-lg p-8 hover:shadow-lg transition-shadow duration-300">
+                <div class="project-card relative bg-white border border-gray-100 rounded-lg p-8 cursor-pointer hover:-translate-y-1 hover:border-custom-red/30 hover:shadow-lg transition-all duration-300 focus-within:ring-2 focus-within:ring-custom-red focus-within:ring-offset-4">
+                    <a href="olds/" class="absolute inset-0 z-10 rounded-lg focus:outline-none" aria-label="Read the Olds project page"></a>
                     <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3 mb-4">
                         <div class="flex flex-wrap items-center gap-3">
                             <h3 class="text-2xl font-semibold text-custom-red">Olds</h3>
@@ -235,7 +281,7 @@
                                 <i class="fas fa-star text-lg"></i>
                             </span>
                         </div>
-                        <div class="flex gap-3 items-center">
+                        <div class="relative z-20 flex gap-3 items-center">
                             <a href="https://readolds.fyi" target="_blank"
                                class="text-custom-red hover:text-custom-red-light transition-colors duration-300">
                                 <i class="fas fa-globe text-2xl"></i>
@@ -257,7 +303,8 @@
                 </div>
 
                 <!-- QueQueue -->
-                <div class="bg-white border border-gray-100 rounded-lg p-8 hover:shadow-lg transition-shadow duration-300">
+                <div class="project-card relative bg-white border border-gray-100 rounded-lg p-8 cursor-pointer hover:-translate-y-1 hover:border-custom-red/30 hover:shadow-lg transition-all duration-300 focus-within:ring-2 focus-within:ring-custom-red focus-within:ring-offset-4">
+                    <a href="quequeue/" class="absolute inset-0 z-10 rounded-lg focus:outline-none" aria-label="Read the QueQueue project page"></a>
                     <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3 mb-4">
                         <div class="flex flex-wrap items-center gap-3">
                             <h3 class="text-2xl font-semibold text-custom-red">QueQueue</h3>
@@ -265,7 +312,7 @@
                                 <i class="fas fa-star text-lg"></i>
                             </span>
                         </div>
-                        <div class="flex gap-3 items-center">
+                        <div class="relative z-20 flex gap-3 items-center">
                             <a href="https://quequeue.app" target="_blank"
                                class="text-custom-red hover:text-custom-red-light transition-colors duration-300">
                                 <i class="fas fa-globe text-2xl"></i>
@@ -288,7 +335,8 @@
                 </div>
 
                 <!-- MUNNW SMS -->
-                <div class="bg-white border border-gray-100 rounded-lg p-8 hover:shadow-lg transition-shadow duration-300">
+                <div class="project-card relative bg-white border border-gray-100 rounded-lg p-8 cursor-pointer hover:-translate-y-1 hover:border-custom-red/30 hover:shadow-lg transition-all duration-300 focus-within:ring-2 focus-within:ring-custom-red focus-within:ring-offset-4">
+                    <a href="munnorthwest-sms/" class="absolute inset-0 z-10 rounded-lg focus:outline-none" aria-label="Read the Model United Nations Northwest SMS Admin project page"></a>
                     <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3 mb-4">
                         <div class="flex flex-wrap items-center gap-3">
                             <h3 class="text-2xl font-semibold text-custom-red">Model United Nations Northwest SMS Admin</h3>
@@ -297,25 +345,27 @@
                             </span>
                         </div>
                         <a href="https://github.com/parthkotwal/munnorthwest_sms" target="_blank" 
-                           class="text-custom-red hover:text-custom-red-light transition-colors duration-300">
+                           class="relative z-20 text-custom-red hover:text-custom-red-light transition-colors duration-300">
                             <i class="fab fa-github text-2xl"></i>
                         </a>
                     </div>
                     <div class="flex flex-wrap gap-2 mb-4">
                         <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">FastAPI</span>
-                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">JS</span>
+                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">Twilio</span>
                         <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">PostgreSQL</span>
+                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">SQLAlchemy</span>
                         <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">Tailwind CSS</span>
                     </div>
                     <p class="text-custom-red text-lg leading-relaxed">Currently used by the largest Model United Nations conferences in the Pacific Northwest. FastAPI + Twilio SMS admin for announcements with bulk contact management and scheduling</p>
                 </div>
 
                 <!-- Decido -->
-                <div class="bg-white border border-gray-100 rounded-lg p-8 hover:shadow-lg transition-shadow duration-300">
+                <div class="project-card relative bg-white border border-gray-100 rounded-lg p-8 cursor-pointer hover:-translate-y-1 hover:border-custom-red/30 hover:shadow-lg transition-all duration-300 focus-within:ring-2 focus-within:ring-custom-red focus-within:ring-offset-4">
+                    <a href="decido/" class="absolute inset-0 z-10 rounded-lg focus:outline-none" aria-label="Read the Decido project page"></a>
                     <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3 mb-4">
                         <h3 class="text-2xl font-semibold text-custom-red">Decido</h3>
                         <a href="https://github.com/parthkotwal/decido" target="_blank" 
-                           class="text-custom-red hover:text-custom-red-light transition-colors duration-300">
+                           class="relative z-20 text-custom-red hover:text-custom-red-light transition-colors duration-300">
                             <i class="fab fa-github text-2xl"></i>
                         </a>
                     </div>
@@ -325,15 +375,16 @@
                         <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">Playwright</span>
                         <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">Modal</span>
                     </div>
-                    <p class="text-custom-red text-lg leading-relaxed">Multimodal (DOM + Vision) web agent for studying why multi-step browser agents fail. Based on the <a href="https://arxiv.org/abs/2604.08516" target="_blank" class="text-custom-red hover:text-custom-red-light underline">MolmoWeb paper</a></p>
+                    <p class="text-custom-red text-lg leading-relaxed">Multimodal (DOM + Vision) web agent for studying why multi-step browser agents fail. Based on the <a href="https://arxiv.org/abs/2604.08516" target="_blank" class="relative z-20 text-custom-red hover:text-custom-red-light underline">MolmoWeb paper</a></p>
                 </div>
 
                 <!-- braai CNN -->
-                <div class="bg-white border border-gray-100 rounded-lg p-8 hover:shadow-lg transition-shadow duration-300">
+                <div class="project-card relative bg-white border border-gray-100 rounded-lg p-8 cursor-pointer hover:-translate-y-1 hover:border-custom-red/30 hover:shadow-lg transition-all duration-300 focus-within:ring-2 focus-within:ring-custom-red focus-within:ring-offset-4">
+                    <a href="braai-cnn/" class="absolute inset-0 z-10 rounded-lg focus:outline-none" aria-label="Read the Transient Detection with braai CNN project page"></a>
                     <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3 mb-4">
                         <h3 class="text-2xl font-semibold text-custom-red">Transient Detection with braai CNN</h3>
                         <a href="https://github.com/parthkotwal/braai-cnn" target="_blank" 
-                           class="text-custom-red hover:text-custom-red-light transition-colors duration-300">
+                           class="relative z-20 text-custom-red hover:text-custom-red-light transition-colors duration-300">
                             <i class="fab fa-github text-2xl"></i>
                         </a>
                     </div>
@@ -343,15 +394,16 @@
                         <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">NumPy</span>
                         <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">Scikit-learn</span>
                     </div>
-                    <p class="text-custom-red text-lg leading-relaxed">Custom CuPy/NumPy CNN for astrophysical transient detection. Based on the "Real-bogus classification for the Zwicky Transient Facility using deep learning" <a href="https://arxiv.org/abs/1907.11259" target="_blank" class="text-custom-red hover:text-custom-red-light underline">paper</a></p>
+                    <p class="text-custom-red text-lg leading-relaxed">Custom CuPy/NumPy CNN for astrophysical transient detection. Based on the "Real-bogus classification for the Zwicky Transient Facility using deep learning" <a href="https://arxiv.org/abs/1907.11259" target="_blank" class="relative z-20 text-custom-red hover:text-custom-red-light underline">paper</a></p>
                 </div>
 
                 <!-- Star Class Forest -->
-                <div class="bg-white border border-gray-100 rounded-lg p-8 hover:shadow-lg transition-shadow duration-300">
+                <div class="project-card relative bg-white border border-gray-100 rounded-lg p-8 cursor-pointer hover:-translate-y-1 hover:border-custom-red/30 hover:shadow-lg transition-all duration-300 focus-within:ring-2 focus-within:ring-custom-red focus-within:ring-offset-4">
+                    <a href="star-class-forest/" class="absolute inset-0 z-10 rounded-lg focus:outline-none" aria-label="Read the Automated Stellar Classification project page"></a>
                     <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3 mb-4">
                         <h3 class="text-2xl font-semibold text-custom-red">Automated Stellar Classification</h3>
                         <a href="https://github.com/parthkotwal/Star-Class-Forest" target="_blank" 
-                           class="text-custom-red hover:text-custom-red-light transition-colors duration-300">
+                           class="relative z-20 text-custom-red hover:text-custom-red-light transition-colors duration-300">
                             <i class="fab fa-github text-2xl"></i>
                         </a>
                     </div>

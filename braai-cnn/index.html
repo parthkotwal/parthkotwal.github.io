@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Parth Kotwal's comparison of custom CuPy and PyTorch CNNs for real/bogus transient detection in ZTF imaging data.">
+    <meta property="og:title" content="Real/Bogus Transient Detection | Parth Kotwal">
+    <meta property="og:description" content="Implementing and comparing CNNs for real/bogus classification in ZTF imaging data.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://parthkotwal.github.io/braai-cnn/">
+    <link rel="canonical" href="https://parthkotwal.github.io/braai-cnn/">
+
+    <title>Real/Bogus Transient Detection | Parth Kotwal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link id="site-favicon" rel="icon" type="image/svg+xml" href="../images/logo-3.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/project.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'merriweather': ['Merriweather', 'serif'],
+                    },
+                    colors: {
+                        'custom-red': 'var(--primary)',
+                        'custom-red-light': 'var(--primary-light)',
+                        'custom-red-dark': 'var(--primary-dark)',
+                    }
+                }
+            }
+        }
+    </script>
+    <script defer src="../assets/project.js"></script>
+</head>
+
+<body class="bg-white text-custom-red font-merriweather">
+    <a href="#project-note" class="skip-link">Skip to project</a>
+
+    <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-100 z-50" aria-label="Primary navigation">
+        <div class="max-w-6xl mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="../" class="text-2xl font-bold text-custom-red hover:text-custom-red-light transition-colors duration-300">
+                    Parth Kotwal
+                </a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="../#about" class="text-custom-red hover:text-custom-red-light transition-colors duration-300 font-medium">About</a>
+                    <a href="../#experience" class="text-custom-red hover:text-custom-red-light transition-colors duration-300 font-medium">Experience</a>
+                    <a href="../#projects" class="text-custom-red hover:text-custom-red-light transition-colors duration-300 font-medium">Projects</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button id="mobile-menu-toggle" type="button" class="md:hidden text-custom-red hover:text-custom-red-light transition-colors duration-300" aria-label="Toggle navigation menu" aria-controls="mobile-menu" aria-expanded="false">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                    <button id="theme-toggle" type="button" class="px-3 py-1 rounded-full border border-custom-red/40 text-custom-red text-sm font-medium hover:bg-custom-red/10 transition-colors duration-300" aria-label="Toggle primary color theme" aria-pressed="false">
+                        Blue
+                    </button>
+                    <a href="https://github.com/parthkotwal/" target="_blank" rel="noopener noreferrer" class="text-custom-red hover:text-custom-red-light transition-colors duration-300" aria-label="GitHub profile">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/parthkotwal/" target="_blank" rel="noopener noreferrer" class="text-custom-red hover:text-custom-red-light transition-colors duration-300" aria-label="LinkedIn profile">
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </a>
+                    <a href="mailto:pkotwal@uw.edu" class="text-custom-red hover:text-custom-red-light transition-colors duration-300" aria-label="Email Parth">
+                        <i class="fas fa-envelope text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            <div id="mobile-menu" class="md:hidden hidden pt-4 pb-2 space-y-3">
+                <a href="../#about" class="block text-custom-red hover:text-custom-red-light transition-colors duration-300 font-medium">About</a>
+                <a href="../#experience" class="block text-custom-red hover:text-custom-red-light transition-colors duration-300 font-medium">Experience</a>
+                <a href="../#projects" class="block text-custom-red hover:text-custom-red-light transition-colors duration-300 font-medium">Projects</a>
+            </div>
+        </div>
+    </nav>
+
+    <main id="project-note" class="max-w-4xl mx-auto px-6 pt-36 pb-24">
+        <a href="../#projects" class="inline-flex items-center gap-2 text-sm font-medium text-custom-red hover:text-custom-red-light transition-colors duration-300 mb-10">
+            <span aria-hidden="true">←</span> Projects
+        </a>
+
+        <article>
+            <header class="pb-10 border-b border-custom-red/20">
+                <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-5">
+                    <div>
+                        <h1 class="text-4xl md:text-5xl font-bold text-custom-red leading-tight mb-4">Real/Bogus Transient Detection</h1>
+                        <p class="text-xl leading-relaxed text-custom-red max-w-3xl">A custom CuPy CNN and a PyTorch implementation for separating real astrophysical events from false detections in ZTF image cutouts.</p>
+                    </div>
+                    <div class="shrink-0 flex flex-wrap sm:flex-col gap-4 sm:items-end">
+                        <a href="https://arxiv.org/abs/1907.11259" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-custom-red hover:text-custom-red-light transition-colors duration-300 font-medium">
+                            <i class="fas fa-file-lines" aria-hidden="true"></i>
+                            braai paper
+                        </a>
+                        <a href="https://github.com/parthkotwal/braai-cnn" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-custom-red hover:text-custom-red-light transition-colors duration-300 font-medium">
+                            <i class="fab fa-github text-xl" aria-hidden="true"></i>
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap gap-2 mt-7" aria-label="Technologies used">
+                    <span class="project-tag">PyTorch</span>
+                    <span class="project-tag">CuPy</span>
+                    <span class="project-tag">NumPy</span>
+                    <span class="project-tag">scikit-learn</span>
+                    <span class="project-tag">CNNs</span>
+                </div>
+            </header>
+
+            <div class="project-copy">
+                <section aria-labelledby="why-heading">
+                    <h2 id="why-heading">The problem</h2>
+                    <p>Modern sky surveys produce more candidate events than people can inspect by hand. Some are real transients—objects such as supernovae or comets that change in brightness or position—but many are artifacts from instruments or image processing. The useful signal can be subtle inside a small, noisy cutout.</p>
+                    <p>I used the <a href="https://arxiv.org/abs/1907.11259" target="_blank" rel="noopener noreferrer">braai paper by Duev et al.</a> as the architectural starting point for studying this real/bogus classification task. My work is inspired by the paper rather than a strict reproduction: the data, split, hyperparameters, and frameworks differ, so the results are not directly comparable.</p>
+                </section>
+
+                <section aria-labelledby="data-heading">
+                    <h2 id="data-heading">What the model sees</h2>
+                    <p>The dataset contains 38,368 labeled candidates from the University of Washington's ZTF Alert Archive. Each example contains three 63 × 63 cutouts: the new science image, a reference template, and their difference. About 18,000 examples are labeled real and 20,000 bogus.</p>
+                    <p>That spatial arrangement matters. I compared CNNs that operate directly on the cutouts with Logistic Regression and Random Forest baselines that flatten every example into 11,907 unrelated pixel values.</p>
+                </section>
+
+                <section aria-labelledby="twice-heading">
+                    <h2 id="twice-heading">Building the CNN twice</h2>
+                    <p>I first implemented the VGG6-style network at a low level with NumPy-compatible CuPy operations. Each convolution, pooling, dropout, and fully connected layer owns its forward and backward passes. Converting sliding image patches with <code>im2col</code> and accumulating their gradients with <code>col2im</code> turned convolution into matrix multiplication and reduced a projected 67-day CPU training run to about 35 minutes on an NVIDIA L4 GPU.</p>
+                    <p>I then rebuilt the same architecture in PyTorch as a benchmark. The framework version trained in under three minutes on a T4 GPU. Writing both made the tradeoff concrete: the custom version exposed initialization, gradient flow, and memory management, while PyTorch made the same model far faster to express and run.</p>
+                </section>
+
+                <section aria-labelledby="results-heading">
+                    <h2 id="results-heading">What the comparison showed</h2>
+                    <p>All four models were evaluated on the same held-out set of 9,592 examples. Both CNNs outperformed the flattened baselines, while the custom implementation stayed close to the PyTorch model despite its much longer inference time.</p>
+
+                    <div class="overflow-x-auto my-7">
+                        <table class="w-full text-left border-collapse" aria-label="Model evaluation results">
+                            <thead>
+                                <tr class="border-b border-custom-red/30">
+                                    <th scope="col" class="py-3 pr-5 font-bold">Model</th>
+                                    <th scope="col" class="py-3 pr-5 font-bold">Accuracy</th>
+                                    <th scope="col" class="py-3 font-bold">ROC AUC</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b border-custom-red/15">
+                                    <td class="py-3 pr-5">PyTorch CNN</td>
+                                    <td class="py-3 pr-5">82.61%</td>
+                                    <td class="py-3">0.9105</td>
+                                </tr>
+                                <tr class="border-b border-custom-red/15">
+                                    <td class="py-3 pr-5">CuPy CNN</td>
+                                    <td class="py-3 pr-5">80.17%</td>
+                                    <td class="py-3">0.8902</td>
+                                </tr>
+                                <tr class="border-b border-custom-red/15">
+                                    <td class="py-3 pr-5">Random Forest</td>
+                                    <td class="py-3 pr-5">77.50%</td>
+                                    <td class="py-3">0.8551</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-3 pr-5">Logistic Regression</td>
+                                    <td class="py-3 pr-5">66.17%</td>
+                                    <td class="py-3">0.7113</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p>The Random Forest was more competitive than I expected, but the CNN results reinforced why preserving spatial structure is useful for these image triplets.</p>
+                </section>
+
+                <section aria-labelledby="learned-heading">
+                    <h2 id="learned-heading">What I learned</h2>
+                    <p>I began this as a machine-learning exercise and finished with a much better understanding of what sits beneath a framework call. Training stability depended on details such as He and Xavier initialization, early stopping, GPU memory cleanup, and the representation of convolution itself.</p>
+                    <p>The project also changed how I read evaluation results. Accuracy was only one part of the comparison; recall, threshold behavior, inference time, and implementation complexity all affect whether a classifier is practical for a large sky survey. More than anything, implementing the architecture gave me a stronger appreciation for the decisions in the original braai work.</p>
+                </section>
+            </div>
+
+            <footer class="mt-16 pt-8 border-t border-custom-red/20 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5">
+                <a href="../#projects" class="font-medium text-custom-red hover:text-custom-red-light transition-colors duration-300">← Back to Projects</a>
+                <a href="https://github.com/parthkotwal/braai-cnn#readme" target="_blank" rel="noopener noreferrer" class="font-medium text-custom-red hover:text-custom-red-light transition-colors duration-300">Read the full project write-up ↗</a>
+            </footer>
+        </article>
+    </main>
+
+    <footer class="py-12 px-6 border-t border-gray-100">
+        <div class="max-w-4xl mx-auto text-center">
+            <p class="text-custom-red text-lg">&copy; 2026 Parth Kotwal. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

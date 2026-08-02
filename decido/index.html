@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Decido is Parth Kotwal's multimodal web agent for studying how planning structure, execution context, and verification affect multi-step browser tasks.">
+    <meta property="og:title" content="Decido | Parth Kotwal">
+    <meta property="og:description" content="A multimodal web agent built to study why multi-step browser agents fail.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://parthkotwal.github.io/decido/">
+    <link rel="canonical" href="https://parthkotwal.github.io/decido/">
+
+    <title>Decido | Parth Kotwal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link id="site-favicon" rel="icon" type="image/svg+xml" href="../images/logo-3.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/project.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'merriweather': ['Merriweather', 'serif'],
+                    },
+                    colors: {
+                        'custom-red': 'var(--primary)',
+                        'custom-red-light': 'var(--primary-light)',
+                        'custom-red-dark': 'var(--primary-dark)',
+                    }
+                }
+            }
+        }
+    </script>
+    <script defer src="../assets/project.js"></script>
+</head>
+
+<body class="bg-white text-custom-red font-merriweather">
+    <a href="#project-note" class="skip-link">Skip to project</a>
+
+    <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-100 z-50" aria-label="Primary navigation">
+        <div class="max-w-6xl mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="../" class="text-2xl font-bold text-custom-red hover:text-custom-red-light transition-colors duration-300">
+                    Parth Kotwal
+                </a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="../#about" class="text-custom-red hover:text-custom-red-light transition-colors duration-300 font-medium">About</a>
+                    <a href="../#experience" class="text-custom-red hover:text-custom-red-light transition-colors duration-300 font-medium">Experience</a>
+                    <a href="../#projects" class="text-custom-red hover:text-custom-red-light transition-colors duration-300 font-medium">Projects</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button id="mobile-menu-toggle" type="button" class="md:hidden text-custom-red hover:text-custom-red-light transition-colors duration-300" aria-label="Toggle navigation menu" aria-controls="mobile-menu" aria-expanded="false">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                    <button id="theme-toggle" type="button" class="px-3 py-1 rounded-full border border-custom-red/40 text-custom-red text-sm font-medium hover:bg-custom-red/10 transition-colors duration-300" aria-label="Toggle primary color theme" aria-pressed="false">
+                        Blue
+                    </button>
+                    <a href="https://github.com/parthkotwal/" target="_blank" rel="noopener noreferrer" class="text-custom-red hover:text-custom-red-light transition-colors duration-300" aria-label="GitHub profile">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/parthkotwal/" target="_blank" rel="noopener noreferrer" class="text-custom-red hover:text-custom-red-light transition-colors duration-300" aria-label="LinkedIn profile">
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </a>
+                    <a href="mailto:pkotwal@uw.edu" class="text-custom-red hover:text-custom-red-light transition-colors duration-300" aria-label="Email Parth">
+                        <i class="fas fa-envelope text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            <div id="mobile-menu" class="md:hidden hidden pt-4 pb-2 space-y-3">
+                <a href="../#about" class="block text-custom-red hover:text-custom-red-light transition-colors duration-300 font-medium">About</a>
+                <a href="../#experience" class="block text-custom-red hover:text-custom-red-light transition-colors duration-300 font-medium">Experience</a>
+                <a href="../#projects" class="block text-custom-red hover:text-custom-red-light transition-colors duration-300 font-medium">Projects</a>
+            </div>
+        </div>
+    </nav>
+
+    <main id="project-note" class="max-w-4xl mx-auto px-6 pt-36 pb-24">
+        <a href="../#projects" class="inline-flex items-center gap-2 text-sm font-medium text-custom-red hover:text-custom-red-light transition-colors duration-300 mb-10">
+            <span aria-hidden="true">←</span> Projects
+        </a>
+
+        <article>
+            <header class="pb-10 border-b border-custom-red/20">
+                <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-5">
+                    <div>
+                        <h1 class="text-4xl md:text-5xl font-bold text-custom-red leading-tight mb-4">Decido</h1>
+                        <p class="text-xl leading-relaxed text-custom-red max-w-3xl">A multimodal web agent for studying why multi-step browser agents fail—and how much of the answer lies around the model rather than inside it.</p>
+                    </div>
+                    <a href="https://github.com/parthkotwal/decido" target="_blank" rel="noopener noreferrer" class="shrink-0 inline-flex items-center gap-2 text-custom-red hover:text-custom-red-light transition-colors duration-300 font-medium">
+                        <i class="fab fa-github text-xl" aria-hidden="true"></i>
+                        GitHub
+                    </a>
+                </div>
+
+                <div class="flex flex-wrap gap-2 mt-7" aria-label="Technologies used">
+                    <span class="project-tag">Python</span>
+                    <span class="project-tag">FastAPI</span>
+                    <span class="project-tag">Playwright</span>
+                    <span class="project-tag">gpt-5-nano</span>
+                    <span class="project-tag">Qwen2.5-VL</span>
+                    <span class="project-tag">Modal</span>
+                </div>
+            </header>
+
+            <div class="project-copy">
+                <section aria-labelledby="origin-heading">
+                    <h2 id="origin-heading">Where it started</h2>
+                    <p>Decido grew from two related ideas. While working as a research assistant at the UW Computer Systems Lab, I was studying whether personal agents fail because they need more training or because they lack context about their own deployment: what they have already done, what comes next, and whether the last action actually worked.</p>
+                    <p>I also wanted to build a web agent after reading AI2's <a href="https://arxiv.org/abs/2604.08516" target="_blank" rel="noopener noreferrer" class="underline decoration-custom-red/40 underline-offset-4 hover:text-custom-red-light transition-colors duration-300">MolmoWeb paper</a>. Decido borrows its idea of planning with named web skills instead of raw clicks, but takes a different route: it pairs a planner that reads the DOM with one that reads screenshots, then ranks their proposed plans against each other.</p>
+                </section>
+
+                <section aria-labelledby="works-heading">
+                    <h2 id="works-heading">How it works</h2>
+                    <p>For each task, a DOM planner and a vision planner propose high-level plans such as filling a form, applying filters, or adding an item to a cart. A ranking layer looks at their confidence, whether the two sources agree, the order of the remaining checklist items, and whether a plan repeats work that has already succeeded.</p>
+
+                    <div class="project-flow" aria-label="Decido browser-agent loop">
+                        <div class="project-flow-step">
+                            <span>Propose</span>
+                            <strong>DOM + vision</strong>
+                            <small>Skill plans</small>
+                        </div>
+                        <div class="project-flow-step">
+                            <span>Ground</span>
+                            <strong>Plan → actions</strong>
+                            <small>Deterministic compiler</small>
+                        </div>
+                        <div class="project-flow-step">
+                            <span>Execute</span>
+                            <strong>Act + verify</strong>
+                            <small>Playwright</small>
+                        </div>
+                    </div>
+
+                    <p>The winning plan is compiled into primitive browser actions without another model call. Playwright executes and verifies each primitive, and only verified evidence advances the task checklist. An independent evaluator checks any final success claim before the session is allowed to end.</p>
+                </section>
+
+                <section aria-labelledby="experiment-heading">
+                    <h2 id="experiment-heading">The experiment I cared about</h2>
+                    <p>I ran 34 tasks across six categories three times per configuration. After applying the same shared bug fixes, the older atomic runner completed 70 of 102 sessions. Moving to the skill runner with only the DOM planner completed 93 of 102. Adding the vision planner reached 99 of 102.</p>
+
+                    <blockquote>
+                        The models stayed the same. Giving them a checklist, ordering context, memory of completed work, and verified execution feedback produced the largest gain.
+                    </blockquote>
+
+                    <p>The comparison is the concrete version of the lab hypothesis: the same underlying intelligence can perform very differently depending on what the surrounding system tells it about the task and its own prior actions.</p>
+                </section>
+
+                <section aria-labelledby="verification-heading">
+                    <h2 id="verification-heading">Why verification mattered</h2>
+                    <p>Browser agents are generous graders of their own work. A page containing the words “Add to cart” does not prove that anything was added, and a confirmation element can exist before a form has been submitted. Most tasks therefore include independent URL or text checks against the final page, and those checks override the agent's self-report in either direction.</p>
+                    <p>Seven of 60 apparent successes from the atomic configuration failed that outside verification. In the skill runner, one of 102 did. The gap made verification part of the result rather than a final testing detail.</p>
+                </section>
+
+                <section aria-labelledby="learned-heading">
+                    <h2 id="learned-heading">What I learned</h2>
+                    <p>Vision helped most when the page itself was visually ambiguous: comparing many prices at once or finding a bare, unlabeled input. It was not universally better, and the DOM-only configuration even won one more run on a multi-page subset. A second planner can add noise as well as signal.</p>
+                    <p>The benchmark also has deliberate limits. It uses live demo sites rather than WebArena-scale tasks, the ranking weights are still hand-tuned, and vision proposes plans but does not ground individual clicks. I see the results as evidence about failure modes and deployment context, not a state-of-the-art claim.</p>
+                </section>
+            </div>
+
+            <footer class="mt-16 pt-8 border-t border-custom-red/20 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5">
+                <a href="../#projects" class="font-medium text-custom-red hover:text-custom-red-light transition-colors duration-300">← Back to Projects</a>
+                <a href="https://github.com/parthkotwal/decido#readme" target="_blank" rel="noopener noreferrer" class="font-medium text-custom-red hover:text-custom-red-light transition-colors duration-300">Read the technical README ↗</a>
+            </footer>
+        </article>
+    </main>
+
+    <footer class="py-12 px-6 border-t border-gray-100">
+        <div class="max-w-4xl mx-auto text-center">
+            <p class="text-custom-red text-lg">&copy; 2026 Parth Kotwal. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
