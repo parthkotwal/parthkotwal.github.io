@@ -141,7 +141,7 @@ A tiny personal frustration can be a useful reason to build a complete product. 
 
 It also made the constraints of third-party platforms tangible. The app works because Spotify provides an API, but who can sign in is still shaped by Spotify's authorization rules. Building around that boundary was as much a part of the project as building the queue manager itself.
 
-## [Model United Nations Northwest SMS Admin](https://parthkotwal.github.io/munnorthwest-sms/)
+## [Model United Nations Northwest SMS Admin](https://parthkotwal.github.io/sms/)
 
 A conference messaging tool for managing participant contacts and sending timely announcements to the right groups.
 
