@@ -12,7 +12,7 @@
 
     <title>Parth Kotwal | Computer Science Student | Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link id="site-favicon" rel="icon" type="image/svg+xml" href="images/logo-3.svg">
+    <link id="site-favicon" rel="icon" type="image/svg+xml" href="images/logo-2.svg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <!-- KaTeX: render math like LaTeX in the page -->
@@ -23,15 +23,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #DC143C;
-            --primary-light: #E6456B;
-            --primary-dark: #B91C3C;
-        }
-
-        html.theme-blue {
             --primary: #236899;
             --primary-light: #2f7eb4;
             --primary-dark: #1b5378;
+        }
+
+        html.theme-red {
+            --primary: #DC143C;
+            --primary-light: #E6456B;
+            --primary-dark: #B91C3C;
         }
 
         .fiery-text {
@@ -132,7 +132,7 @@
                         <i class="fas fa-bars text-xl"></i>
                     </button>
                     <button id="theme-toggle" type="button" class="px-3 py-1 rounded-full border border-custom-red/40 text-custom-red text-sm font-medium hover:bg-custom-red/10 transition-colors duration-300" aria-label="Toggle primary color theme" aria-pressed="false">
-                        Blue
+                        Red
                     </button>
                     <a href="https://github.com/parthkotwal/" target="_blank" class="text-custom-red hover:text-custom-red-light transition-colors duration-300">
                         <i class="fab fa-github text-xl"></i>
@@ -514,6 +514,7 @@
         const applyTheme = (theme) => {
             const blueActive = theme === 'blue';
             root.classList.toggle('theme-blue', blueActive);
+            root.classList.toggle('theme-red', !blueActive);
             themeToggleBtn.textContent = blueActive ? 'Red' : 'Blue';
             themeToggleBtn.setAttribute('aria-pressed', String(blueActive));
             favicon.setAttribute('href', blueActive ? BLUE_FAVICON : RED_FAVICON);
@@ -521,7 +522,7 @@
         };
 
         const savedTheme = localStorage.getItem(THEME_KEY);
-        applyTheme(savedTheme === 'blue' ? 'blue' : 'red');
+        applyTheme(savedTheme === 'red' ? 'red' : 'blue');
 
         themeToggleBtn.addEventListener('click', () => {
             const nextTheme = root.classList.contains('theme-blue') ? 'red' : 'blue';
