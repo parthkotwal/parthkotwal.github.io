@@ -2,32 +2,20 @@
 
 # Parth Kotwal
 
-> CS @ UW · ML Systems
-
 **Website:** [https://parthkotwal.github.io/](https://parthkotwal.github.io/)
 
 This is the plain-Markdown version of the portfolio, generated from the public website for readers and AI tools.
 
-## About Me
+## About
 
-Hello, I'm Parth, a Computer Science student at the University of Washington, Seattle, with a fiery passion for machine learning systems. I’m currently interested in recommendation systems and in developing fail-safe, multi-turn agents through my work at the UW Computer Systems Lab.
+CS @ University of Washington, currently exploring recommendation systems!
 
 ### Building right now
 
 - **Eggly** — Social media for tasters
 
-### In my spare time, I enjoy:
-
-- Playing the latest FIFA or badminton
-- Following FC Barcelona
-- Reviewing restaurants, cafes, and bakeries on [Beli](https://beliapp.co/app/kotwal)
-- Expanding my fragrance collection ($n = 14$)
-
 ## Experience
 
-- **Software Engineer Intern** — Infoblox • June 2026 - August 2026
-- **Machine Learning Researcher** — University of Washington Computer Systems Lab • October 2025 - Present
-- **Software Engineer Intern** — miniOrange • July 2024 - September 2024
 
 ## Projects
 
@@ -76,6 +64,52 @@ I kept the filter and documented the metric regression deliberately. It was a go
 Several ideas that looked better on paper did not survive measurement. Exact vector search was already lossless at about 1 ms p99 for this catalog, so HNSW added complexity without a useful speedup. A two-tower model did not beat ALS at its evaluation gate. On AWS, adding a second Uvicorn worker made latency worse; limiting an uncounted OpenBLAS thread pool mattered more.
 
 The deployed service reached a warm server-side p99 of 95.41 ms at 20 requests per second with persistent connections. I tore the AWS deployment down after measuring it on August 1, 2026 to keep the showcase's cost bounded. The repository retains the Docker and Terraform setup, as well as the full measurement context.
+
+## [Decido](https://parthkotwal.github.io/decido/)
+
+A multimodal web agent for studying why multi-step browser agents fail—and how much of the answer lies around the model rather than inside it.
+
+**Technologies:** Python · FastAPI · Playwright · gpt-5-nano · Qwen2.5-VL · Modal
+
+**Source:** [GitHub](https://github.com/parthkotwal/decido)
+
+### Where it started
+
+Decido grew from two related ideas. While working as a research assistant at the UW Computer Systems Lab, I was studying whether personal agents fail because they need more training or because they lack context about their own deployment: what they have already done, what comes next, and whether the last action actually worked.
+
+I also wanted to build a web agent after reading AI2's [MolmoWeb paper](https://arxiv.org/abs/2604.08516). Decido borrows its idea of planning with named web skills instead of raw clicks, but takes a different route: it pairs a planner that reads the DOM with one that reads screenshots, then ranks their proposed plans against each other.
+
+### How it works
+
+For each task, a DOM planner and a vision planner propose high-level plans such as filling a form, applying filters, or adding an item to a cart. A ranking layer looks at their confidence, whether the two sources agree, the order of the remaining checklist items, and whether a plan repeats work that has already succeeded.
+
+**Decido browser-agent loop:**
+
+- Propose — DOM + vision — Skill plans
+- Ground — Plan → actions — Deterministic compiler
+- Execute — Act + verify — Playwright
+
+The winning plan is compiled into primitive browser actions without another model call. Playwright executes and verifies each primitive, and only verified evidence advances the task checklist. An independent evaluator checks any final success claim before the session is allowed to end.
+
+### The experiment I cared about
+
+I ran 34 tasks across six categories three times per configuration. After applying the same shared bug fixes, the older atomic runner completed 70 of 102 sessions. Moving to the skill runner with only the DOM planner completed 93 of 102. Adding the vision planner reached 99 of 102.
+
+> The models stayed the same. Giving them a checklist, ordering context, memory of completed work, and verified execution feedback produced the largest gain.
+
+The comparison is the concrete version of the lab hypothesis: the same underlying intelligence can perform very differently depending on what the surrounding system tells it about the task and its own prior actions.
+
+### Why verification mattered
+
+Browser agents are generous graders of their own work. A page containing the words “Add to cart” does not prove that anything was added, and a confirmation element can exist before a form has been submitted. Most tasks therefore include independent URL or text checks against the final page, and those checks override the agent's self-report in either direction.
+
+Seven of 60 apparent successes from the atomic configuration failed that outside verification. In the skill runner, one of 102 did. The gap made verification part of the result rather than a final testing detail.
+
+### What I learned
+
+Vision helped most when the page itself was visually ambiguous: comparing many prices at once or finding a bare, unlabeled input. It was not universally better, and the DOM-only configuration even won one more run on a multi-page subset. A second planner can add noise as well as signal.
+
+The benchmark also has deliberate limits. It uses live demo sites rather than WebArena-scale tasks, the ranking weights are still hand-tuned, and vision proposes plans but does not ground individual clicks. I see the results as evidence about failure modes and deployment context, not a state-of-the-art claim.
 
 ## [Olds](https://parthkotwal.github.io/olds/)
 
@@ -141,84 +175,6 @@ A tiny personal frustration can be a useful reason to build a complete product. 
 
 It also made the constraints of third-party platforms tangible. The app works because Spotify provides an API, but who can sign in is still shaped by Spotify's authorization rules. Building around that boundary was as much a part of the project as building the queue manager itself.
 
-## [Model United Nations Northwest SMS Admin](https://parthkotwal.github.io/sms/)
-
-A conference messaging tool for managing participant contacts and sending timely announcements to the right groups.
-
-**Technologies:** FastAPI · Twilio · PostgreSQL · SQLAlchemy · Tailwind CSS
-
-**Source:** [GitHub](https://github.com/parthkotwal/munnorthwest_sms)
-
-### Why I built it
-
-Model United Nations conferences need to communicate with a lot of people at once, but not every announcement belongs in every participant's inbox. Delegates may need one update, advisors another, and staff or secretariat members something more specific.
-
-I built this system for Model United Nations Northwest so conference administrators could keep those contacts organized and send announcements from one practical interface. It is now used by several of the largest Model United Nations conferences in the Pacific Northwest.
-
-### What it does
-
-An administrator selects a conference, imports its participant list from a CSV, and can then search or edit those records in the dashboard. Participants are organized as delegates, advisors, staff, or secretariat, which makes each group available as a messaging audience.
-
-Messages can be sent immediately or scheduled for later. They can also include fields such as a recipient's first name, last name, phone number, or participant type, so a bulk announcement does not have to feel entirely generic.
-
-### Behind each message
-
-The application is built with FastAPI and SQLAlchemy, using PostgreSQL in production and Twilio for delivery. Each conference has its own participants, administrators, colors, and message history, while authentication and CSRF protection keep the operational pages private.
-
-Scheduled messages are checked once a minute. A PostgreSQL advisory lock prevents multiple application workers from processing the same queue at once, and each message keeps a recipient-level delivery record. CSV imports also normalize common encodings and phone-number formats before a contact reaches that queue.
-
-### What I learned
-
-This project made the less glamorous parts of a real administrative tool feel concrete. The interface matters, but so do malformed spreadsheets, duplicate contacts, scheduled jobs, concurrent workers, and a useful record of what was sent.
-
-Building around an actual conference workflow pushed me to think beyond the happy path. The result is not a demo of SMS delivery; it is a small system designed to remain understandable when organizers are using it during a live event.
-
-## [Decido](https://parthkotwal.github.io/decido/)
-
-A multimodal web agent for studying why multi-step browser agents fail—and how much of the answer lies around the model rather than inside it.
-
-**Technologies:** Python · FastAPI · Playwright · gpt-5-nano · Qwen2.5-VL · Modal
-
-**Source:** [GitHub](https://github.com/parthkotwal/decido)
-
-### Where it started
-
-Decido grew from two related ideas. While working as a research assistant at the UW Computer Systems Lab, I was studying whether personal agents fail because they need more training or because they lack context about their own deployment: what they have already done, what comes next, and whether the last action actually worked.
-
-I also wanted to build a web agent after reading AI2's [MolmoWeb paper](https://arxiv.org/abs/2604.08516). Decido borrows its idea of planning with named web skills instead of raw clicks, but takes a different route: it pairs a planner that reads the DOM with one that reads screenshots, then ranks their proposed plans against each other.
-
-### How it works
-
-For each task, a DOM planner and a vision planner propose high-level plans such as filling a form, applying filters, or adding an item to a cart. A ranking layer looks at their confidence, whether the two sources agree, the order of the remaining checklist items, and whether a plan repeats work that has already succeeded.
-
-**Decido browser-agent loop:**
-
-- Propose — DOM + vision — Skill plans
-- Ground — Plan → actions — Deterministic compiler
-- Execute — Act + verify — Playwright
-
-The winning plan is compiled into primitive browser actions without another model call. Playwright executes and verifies each primitive, and only verified evidence advances the task checklist. An independent evaluator checks any final success claim before the session is allowed to end.
-
-### The experiment I cared about
-
-I ran 34 tasks across six categories three times per configuration. After applying the same shared bug fixes, the older atomic runner completed 70 of 102 sessions. Moving to the skill runner with only the DOM planner completed 93 of 102. Adding the vision planner reached 99 of 102.
-
-> The models stayed the same. Giving them a checklist, ordering context, memory of completed work, and verified execution feedback produced the largest gain.
-
-The comparison is the concrete version of the lab hypothesis: the same underlying intelligence can perform very differently depending on what the surrounding system tells it about the task and its own prior actions.
-
-### Why verification mattered
-
-Browser agents are generous graders of their own work. A page containing the words “Add to cart” does not prove that anything was added, and a confirmation element can exist before a form has been submitted. Most tasks therefore include independent URL or text checks against the final page, and those checks override the agent's self-report in either direction.
-
-Seven of 60 apparent successes from the atomic configuration failed that outside verification. In the skill runner, one of 102 did. The gap made verification part of the result rather than a final testing detail.
-
-### What I learned
-
-Vision helped most when the page itself was visually ambiguous: comparing many prices at once or finding a bare, unlabeled input. It was not universally better, and the DOM-only configuration even won one more run on a multi-page subset. A second planner can add noise as well as signal.
-
-The benchmark also has deliberate limits. It uses live demo sites rather than WebArena-scale tasks, the ranking weights are still hand-tuned, and vision proposes plans but does not ground individual clicks. I see the results as evidence about failure modes and deployment context, not a state-of-the-art claim.
-
 ## [Real/Bogus Transient Detection](https://parthkotwal.github.io/braai-cnn/)
 
 A custom CuPy CNN and a PyTorch implementation for separating real astrophysical events from false detections in ZTF image cutouts.
@@ -264,6 +220,38 @@ I began this as a machine-learning exercise and finished with a much better unde
 
 The project also changed how I read evaluation results. Accuracy was only one part of the comparison; recall, threshold behavior, inference time, and implementation complexity all affect whether a classifier is practical for a large sky survey. More than anything, implementing the architecture gave me a stronger appreciation for the decisions in the original braai work.
 
+## [Model United Nations Northwest SMS Admin](https://parthkotwal.github.io/sms/)
+
+A conference messaging tool for managing participant contacts and sending timely announcements to the right groups.
+
+**Technologies:** FastAPI · Twilio · PostgreSQL · SQLAlchemy · Tailwind CSS
+
+**Source:** [GitHub](https://github.com/parthkotwal/munnorthwest_sms)
+
+### Why I built it
+
+Model United Nations conferences need to communicate with a lot of people at once, but not every announcement belongs in every participant's inbox. Delegates may need one update, advisors another, and staff or secretariat members something more specific.
+
+I built this system for Model United Nations Northwest so conference administrators could keep those contacts organized and send announcements from one practical interface. It is now used by several of the largest Model United Nations conferences in the Pacific Northwest.
+
+### What it does
+
+An administrator selects a conference, imports its participant list from a CSV, and can then search or edit those records in the dashboard. Participants are organized as delegates, advisors, staff, or secretariat, which makes each group available as a messaging audience.
+
+Messages can be sent immediately or scheduled for later. They can also include fields such as a recipient's first name, last name, phone number, or participant type, so a bulk announcement does not have to feel entirely generic.
+
+### Behind each message
+
+The application is built with FastAPI and SQLAlchemy, using PostgreSQL in production and Twilio for delivery. Each conference has its own participants, administrators, colors, and message history, while authentication and CSRF protection keep the operational pages private.
+
+Scheduled messages are checked once a minute. A PostgreSQL advisory lock prevents multiple application workers from processing the same queue at once, and each message keeps a recipient-level delivery record. CSV imports also normalize common encodings and phone-number formats before a contact reaches that queue.
+
+### What I learned
+
+This project made the less glamorous parts of a real administrative tool feel concrete. The interface matters, but so do malformed spreadsheets, duplicate contacts, scheduled jobs, concurrent workers, and a useful record of what was sent.
+
+Building around an actual conference workflow pushed me to think beyond the happy path. The result is not a demo of SMS delivery; it is a small system designed to remain understandable when organizers are using it during a live event.
+
 ## [Automated Stellar Classification](https://parthkotwal.github.io/star-class-forest/)
 
 An end-to-end exploration of predicting a star's spectral class from its physical properties.
@@ -293,9 +281,3 @@ K-nearest neighbors produced the higher raw accuracy in the notebook's compariso
 ### What I learned
 
 The most useful part of the project was seeing how easily a single score can hide the shape of a multiclass problem. Comparing model families was helpful, but choosing between them required deciding what kind of mistakes mattered and reading precision and recall alongside accuracy.
-
-## Contact
-
-- [GitHub](https://github.com/parthkotwal/)
-- [LinkedIn](https://www.linkedin.com/in/parthkotwal/)
-- [Email](mailto:pkotwal@uw.edu)

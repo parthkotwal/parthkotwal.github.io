@@ -3,572 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Parth Kotwal portfolio — University of Washington Computer Science student specializing in machine learning, recommendation systems, and software engineering projects.">
+    <meta name="description" content="Parth Kotwal — Computer Science at the University of Washington, currently exploring recommendation systems.">
+    <link rel="canonical" href="https://parthkotwal.github.io/">
     <link rel="alternate" type="text/markdown" href="https://parthkotwal.github.io/portfolio.md" title="Parth Kotwal portfolio in Markdown">
-    <meta property="og:image" content="images/headshot.jpeg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://parthkotwal.github.io/">
+    <meta property="og:image" content="https://parthkotwal.github.io/assets/headshot.jpeg">
     <meta property="og:title" content="Parth Kotwal | Portfolio">
-    <meta property="og:description" content="Aspiring Computer Scientist">
-    <meta name="google-site-verification" content="SK5qAjTas4qST5e6Gf-IcqtOwrXVS4PAndkJHELZr-A" />
-
-    <title>Parth Kotwal | Computer Science Student | Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link id="site-favicon" rel="icon" type="image/svg+xml" href="images/logo-2.svg">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta property="og:description" content="Computer Science at the University of Washington, currently exploring recommendation systems.">
+    <meta name="google-site-verification" content="SK5qAjTas4qST5e6Gf-IcqtOwrXVS4PAndkJHELZr-A">
+    <title>Parth Kotwal</title>
+    <link rel="icon" type="image/png" href="assets/symbol.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <!-- KaTeX: render math like LaTeX in the page -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters:[{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false},{left:'$',right:'$',display:false}]});"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #236899;
-            --primary-light: #2f7eb4;
-            --primary-dark: #1b5378;
-        }
-
-        html.theme-red {
-            --primary: #DC143C;
-            --primary-light: #E6456B;
-            --primary-dark: #B91C3C;
-        }
-
-        .fiery-text {
-            color: #ff6a00; 
-            animation: flame 1s infinite alternate ease-in-out;
-            font-weight: bold;
-        }
-
-        @keyframes flame {
-            0% { text-shadow: 0 0 4px #ff6a00, 0 0 8px #ff9500; transform: scale(1); }
-            50% { text-shadow: 0 0 6px #ffa500, 0 0 12px #ff4500; transform: scale(1.03); }
-            100% { text-shadow: 0 0 4px #ff6a00, 0 0 10px #ff8c00; transform: scale(1); }
-        }
-
-        .uw-purple {
-            color: purple;
-            font-weight: 600;
-        }
-
-        .passion-ml {
-            color: #38bd31;
-            font-style: italic;
-        }
-
-        .passion-build {
-            color: #38bd31;
-            font-style: italic;
-        }
-
-        .beli-link {
-            text-decoration: underline;
-            font-weight: 500;
-            transition: color 0.2s ease-in-out;
-        }
-
-        .beli-link:hover {
-            color: var(--primary-light);
-        }
-
-        .project-card {
-            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-        }
-
-        @media (hover: hover) {
-            .project-card:hover {
-                transform: translateY(-0.25rem);
-                border-color: color-mix(in srgb, var(--primary) 30%, #e5e7eb);
-                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
-            }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            .project-card {
-                transition: none;
-            }
-        }
-
-    </style>
-    <style>
-        /* Make KaTeX match surrounding text size */
-        .katex { font-size: 1em; vertical-align: middle; }
-    </style>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        'merriweather': ['Merriweather', 'serif'],
-                    },
-                    colors: {
-                        'custom-red': 'var(--primary)',
-                        'custom-red-light': 'var(--primary-light)',
-                        'custom-red-dark': 'var(--primary-dark)',
-                    }
-                }
-            }
-        }
-    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/home.css">
 </head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
 
-<body class="bg-white text-custom-red font-merriweather">
-
-    <!-- Nav bar -->
-    <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-100 z-50">
-        <div class="max-w-6xl mx-auto px-6 py-4">
-            <div class="flex justify-between items-center">
-                <div class="text-2xl font-bold text-custom-red">
-                    Parth Kotwal
-                </div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="#about" class="text-custom-red hover:text-custom-red-light transition-colors duration-300 font-medium">About</a>
-                    <a href="#experience" class="text-custom-red hover:text-custom-red-light transition-colors duration-300 font-medium">Experience</a>
-                    <a href="#projects" class="text-custom-red hover:text-custom-red-light transition-colors duration-300 font-medium">Projects</a>
-                    <!-- <a href="#contact" class="text-custom-red hover:text-custom-red-light transition-colors duration-300 font-medium">Contact</a> -->
-                </div>
-                <div class="flex items-center space-x-4">
-                    <button id="mobile-menu-toggle" type="button" class="md:hidden text-custom-red hover:text-custom-red-light transition-colors duration-300" aria-label="Toggle navigation menu" aria-controls="mobile-menu" aria-expanded="false">
-                        <i class="fas fa-bars text-xl"></i>
-                    </button>
-                    <button id="theme-toggle" type="button" class="px-3 py-1 rounded-full border border-custom-red/40 text-custom-red text-sm font-medium hover:bg-custom-red/10 transition-colors duration-300" aria-label="Toggle primary color theme" aria-pressed="false">
-                        Red
-                    </button>
-                    <a href="https://github.com/parthkotwal/" target="_blank" class="text-custom-red hover:text-custom-red-light transition-colors duration-300">
-                        <i class="fab fa-github text-xl"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/parthkotwal/" target="_blank" class="text-custom-red hover:text-custom-red-light transition-colors duration-300">
-                        <i class="fab fa-linkedin text-xl"></i>
-                    </a>
-                    <a href="mailto:pkotwal@uw.edu" target="_blank" class="text-custom-red hover:text-custom-red-light transition-colors duration-300">
-                        <i class="fas fa-envelope text-xl"></i>
-                    </a>
-                </div>
+    <header class="site-header">
+        <nav class="nav-shell" aria-label="Primary navigation">
+            <a class="identity" href="#about" aria-label="Parth Kotwal, back to introduction">
+                <span>Parth Kotwal</span>
+            </a>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
             </div>
-            <div id="mobile-menu" class="md:hidden hidden pt-4 pb-2 space-y-3">
-                <a href="#about" class="block text-custom-red hover:text-custom-red-light transition-colors duration-300 font-medium">About</a>
-                <a href="#experience" class="block text-custom-red hover:text-custom-red-light transition-colors duration-300 font-medium">Experience</a>
-                <a href="#projects" class="block text-custom-red hover:text-custom-red-light transition-colors duration-300 font-medium">Projects</a>
-                <!-- <a href="#contact" class="block text-custom-red hover:text-custom-red-light transition-colors duration-300 font-medium">Contact</a> -->
-            </div>
-        </div>
-    </nav>
-    
+        </nav>
+    </header>
 
-    <!-- Hero Section -->
-    <section class="min-h-screen flex flex-col justify-center items-center px-6 pt-24">
-        <div class="text-center">
-            <h1 class="text-5xl md:text-6xl font-bold text-custom-red mb-8 leading-tight">
-                Parth Kotwal
-            </h1>
-            <h2 class="text-xl md:text-2xl text-custom-red-light font-medium mt-6">
-                CS @ UW · ML Systems
-            </h2>
-            <br>
-            <div class="mb-4">
-                <img src="images/headshot.jpeg" alt="Parth Kotwal" class="w-80 h-auto md:w-96 md:h-auto mx-auto object-cover shadow-2xl border-2 border-custom-red/20">
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="py-20 px-6 bg-gray-50/30">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-4xl font-bold text-custom-red mb-12 text-center">About Me</h2>
-            <div class="prose prose-lg max-w-none text-custom-red">
-                <p class="text-xl leading-relaxed mb-6">
-                    Hello, I'm Parth, a Computer Science student at the <span class="uw-purple">University of Washington, Seattle,</span> with a <span class="fiery-text">fiery</span> passion for <span class="passion-ml">machine learning systems</span>. I’m currently interested in recommendation systems and in developing fail-safe, multi-turn agents through my work at the UW Computer Systems Lab.
+    <main id="main-content">
+        <section id="about" class="intro" aria-labelledby="intro-title">
+            <div class="intro-copy">
+                <h1 id="intro-title">Parth Kotwal</h1>
+                <p class="intro-lede">
+                    <span class="uw">CS @ University of Washington</span>, currently exploring
+                    <span class="fire-text" data-fire-text>recommendation systems!<span class="fire-layer" aria-hidden="true"></span></span>
                 </p>
 
-                <div class="mt-10 ">
-                    <h3 class="text-2xl  text-custom-red mb-4"><i>Building right now</i></h3>
-                    <div id="now-projects" class="space-y-4">
-                        <p class="text-custom-red text-lg">Loading current projects...</p>
-                    </div>
-                </div>
+                <!-- Animation ideas for the interests stay intentionally deferred. -->
+                <p class="personal-line"><span aria-hidden="true">♥</span> Barça, eating out, fragrances, and big cats.</p>
 
-                
-                <div class="mt-12">
-                    <h3 class="text-2xl font-semibold text-custom-red mb-6">In my spare time, I enjoy:</h3>
-                    <div class="grid md:grid-cols-2 gap-4">
-                        <div class="flex items-start space-x-3">
-                            <div class="w-2 h-2 bg-custom-red rounded-full mt-3 flex-shrink-0"></div>
-                            <span class="text-lg">Playing the latest FIFA or badminton</span>
-                        </div>
-                        <div class="flex items-start space-x-3">
-                            <div class="w-2 h-2 bg-custom-red rounded-full mt-3 flex-shrink-0"></div>
-                            <span class="text-lg">Following FC Barcelona</span>
-                        </div>
-                        <div class="flex items-start space-x-3">
-                            <div class="w-2 h-2 bg-custom-red rounded-full mt-3 flex-shrink-0"></div>
-                            <span class="text-lg">Reviewing restaurants, cafes, and bakeries on <a href="https://beliapp.co/app/kotwal" class="beli-link">Beli</a></span>
-                        </div>
-                        <div class="flex items-start space-x-3">
-                            <div class="w-2 h-2 bg-custom-red rounded-full mt-3 flex-shrink-0"></div>
-                            <span class="text-lg">Expanding my fragrance collection ($n = 14$)</span>
-                        </div>
-                    </div>
+                <div class="contact-links" aria-label="Contact and profiles">
+                    <a href="mailto:pkotwal@uw.edu">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+                        <span>Email</span>
+                    </a>
+                    <a href="https://github.com/parthkotwal/" target="_blank" rel="noreferrer">
+                        <svg class="fill-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path></svg>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/parthkotwal/" target="_blank" rel="noreferrer">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        <span>LinkedIn</span>
+                    </a>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="py-20 px-6">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-4xl font-bold text-custom-red mb-12 text-center">Experience</h2>
-            <div class="space-y-12">
-                <div class="border-l-4 border-custom-red pl-8 relative">
-                    <div class="absolute -left-3 top-0 w-6 h-6 bg-custom-red rounded-full"></div>
-                    <h3 class="text-2xl font-semibold text-custom-red mb-2">Software Engineer Intern</h3>
-                    <p class="text-custom-red-light font-medium text-lg mb-4">Infoblox • June 2026 - August 2026</p>
-                </div>
+            <figure class="portrait-wrap">
+                <img src="assets/headshot.jpeg" alt="Parth Kotwal" width="240" height="240" decoding="async">
+            </figure>
+        </section>
 
-                <div class="border-l-4 border-custom-red pl-8 relative">
-                    <div class="absolute -left-3 top-0 w-6 h-6 bg-custom-red rounded-full"></div>
-                    <h3 class="text-2xl font-semibold text-custom-red mb-2">Machine Learning Researcher</h3>
-                    <p class="text-custom-red-light font-medium text-lg mb-4">University of Washington Computer Systems Lab • October 2025 - Present</p>
-                </div>
+        <section id="experience" class="section-block" aria-labelledby="experience-title">
+            <div class="section-heading"><h2 id="experience-title">Experience</h2></div>
+            <ol class="work-list">
+                <li class="work-row">
+                    <img class="work-logo" src="assets/infoblox.jpeg" alt="" width="36" height="36" loading="lazy" decoding="async">
+                    <div class="work-copy"><h3>Software Engineer Intern</h3><p class="work-company">Infoblox</p><p class="work-description">Custom detectors for AI Governance</p></div>
+                    <time datetime="2026-06/2026-08">Jun—Aug 2026</time>
+                </li>
+                <li class="work-row">
+                    <img class="work-logo" src="assets/uw.jpeg" alt="" width="36" height="36" loading="lazy" decoding="async">
+                    <div class="work-copy"><h3>Machine Learning Researcher</h3><p class="work-company">UW Computer Systems Lab</p><p class="work-description">Runtime correction for multi-step personal agents</p></div>
+                    <time datetime="2025-10">Oct 2025—now</time>
+                </li>
+                <li class="work-row">
+                    <img class="work-logo" src="assets/miniorange.jpeg" alt="" width="36" height="36" loading="lazy" decoding="async">
+                    <div class="work-copy"><h3>Software Engineer Intern</h3><p class="work-company">miniOrange</p><p class="work-description">Android malware and anomaly detection</p></div>
+                    <time datetime="2024-07/2024-09">Jul—Sep 2024</time>
+                </li>
+            </ol>
+        </section>
 
-                <div class="border-l-4 border-custom-red pl-8 relative">
-                    <div class="absolute -left-3 top-0 w-6 h-6 bg-custom-red rounded-full"></div>
-                    <h3 class="text-2xl font-semibold text-custom-red mb-2">Software Engineer Intern</h3>
-                    <p class="text-custom-red-light font-medium text-lg mb-4">miniOrange • July 2024 - September 2024</p>
-                </div>
+        <section id="projects" class="section-block" aria-labelledby="projects-title">
+            <div class="section-heading"><h2 id="projects-title">Projects</h2></div>
+            <div class="project-list">
+                <article class="project-row">
+                    <a class="project-main" href="sift/"><h3>Sift</h3><p>A staged recommendation service that narrows 14K Yelp candidates to ten in under 100ms.</p></a>
+                    <div class="project-actions"><a href="https://github.com/parthkotwal/sift" target="_blank" rel="noreferrer">Code ↗</a></div>
+                </article>
+                <article class="project-row">
+                    <a class="project-main" href="decido/"><h3>Decido</h3><p>A multimodal DOM + vision agent for studying why multi-step browser agents fail.</p></a>
+                    <div class="project-actions"><a href="https://arxiv.org/abs/2604.08516" target="_blank" rel="noreferrer">Paper ↗</a><a href="https://github.com/parthkotwal/decido" target="_blank" rel="noreferrer">Code ↗</a></div>
+                </article>
+                <article class="project-row">
+                    <a class="project-main" href="olds/"><h3>Olds</h3><p>A recommendation-driven news site inspired by my childhood habit of reading only the sections I cared about.</p></a>
+                    <div class="project-actions"><a href="https://readolds.fyi" target="_blank" rel="noreferrer">Live ↗</a><a href="https://github.com/parthkotwal/olds" target="_blank" rel="noreferrer">Code ↗</a></div>
+                </article>
+                <article class="project-row">
+                    <a class="project-main" href="quequeue/"><h3>QueQueue</h3><p>Saves and restores Spotify queues—built after losing the perfect queue one too many times.</p></a>
+                    <div class="project-actions"><a href="https://quequeue.app" target="_blank" rel="noreferrer">Live ↗</a><a href="https://github.com/parthkotwal/quequeue" target="_blank" rel="noreferrer">Code ↗</a></div>
+                </article>
+                <article class="project-row">
+                    <a class="project-main" href="braai-cnn/"><h3>Transient Detection with braai CNN</h3><p>CuPy/NumPy vs PyTorch on a VGG6 CNN for astrophysical transient detection.</p></a>
+                    <div class="project-actions"><a href="https://arxiv.org/abs/1907.11259" target="_blank" rel="noreferrer">Paper ↗</a><a href="https://github.com/parthkotwal/braai-cnn" target="_blank" rel="noreferrer">Code ↗</a></div>
+                </article>
+                <article class="project-row">
+                    <a class="project-main" href="sms/"><h3>MUN Northwest SMS</h3><p>Bulk contact management, scheduling, and announcements used by major Model UN conferences in the Pacific Northwest.</p></a>
+                    <div class="project-actions"><a href="https://github.com/parthkotwal/munnorthwest_sms" target="_blank" rel="noreferrer">Code ↗</a></div>
+                </article>
+                <article class="project-row">
+                    <a class="project-main" href="star-class-forest/"><h3>Automated Stellar Classification</h3><p>A random-forest spectral classifier designed for accuracy and interpretability.</p></a>
+                    <div class="project-actions"><a href="https://github.com/parthkotwal/Star-Class-Forest" target="_blank" rel="noreferrer">Code ↗</a></div>
+                </article>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-20 px-6 bg-gray-50/30">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-4xl font-bold text-custom-red mb-12 text-center">Projects</h2>
-            <div class="grid gap-8">
+    </main>
 
-                <!-- Sift -->
-                <div class="project-card relative bg-white border border-gray-100 rounded-lg p-8 cursor-pointer hover:-translate-y-1 hover:border-custom-red/30 hover:shadow-lg transition-all duration-300 focus-within:ring-2 focus-within:ring-custom-red focus-within:ring-offset-4">
-                    <a href="sift/" class="absolute inset-0 z-10 rounded-lg focus:outline-none" aria-label="Read the Sift project page"></a>
-                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3 mb-4">
-                        <div class="flex flex-wrap items-center gap-3">
-                            <h3 class="text-2xl font-semibold text-custom-red">Sift</h3>
-                            <span class="text-custom-red" aria-label="Featured project" title="Featured project">
-                                <i class="fas fa-star text-lg"></i>
-                            </span>
-                        </div>
-                        <a href="https://github.com/parthkotwal/sift" target="_blank"
-                           class="relative z-20 text-custom-red hover:text-custom-red-light transition-colors duration-300"
-                           aria-label="View Sift on GitHub">
-                            <i class="fab fa-github text-2xl"></i>
-                        </a>
-                    </div>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">Python</span>
-                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">FastAPI</span>
-                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">LightGBM</span>
-                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">Redis</span>
-                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">AWS</span>
-                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">Docker</span>
-                    </div>
-                    <p class="text-custom-red text-lg leading-relaxed"> A staged recommendation service over the Yelp Open Dataset. Narrows 14K candidates to ten in under 100ms.</p>
-                </div>
-
-                <!-- Olds -->
-                <div class="project-card relative bg-white border border-gray-100 rounded-lg p-8 cursor-pointer hover:-translate-y-1 hover:border-custom-red/30 hover:shadow-lg transition-all duration-300 focus-within:ring-2 focus-within:ring-custom-red focus-within:ring-offset-4">
-                    <a href="olds/" class="absolute inset-0 z-10 rounded-lg focus:outline-none" aria-label="Read the Olds project page"></a>
-                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3 mb-4">
-                        <div class="flex flex-wrap items-center gap-3">
-                            <h3 class="text-2xl font-semibold text-custom-red">Olds</h3>
-                            <span class="text-custom-red" aria-label="Featured project" title="Featured project">
-                                <i class="fas fa-star text-lg"></i>
-                            </span>
-                        </div>
-                        <div class="relative z-20 flex gap-3 items-center">
-                            <a href="https://readolds.fyi" target="_blank"
-                               class="text-custom-red hover:text-custom-red-light transition-colors duration-300">
-                                <i class="fas fa-globe text-2xl"></i>
-                            </a>
-                            <a href="https://github.com/parthkotwal/olds" target="_blank"
-                               class="text-custom-red hover:text-custom-red-light transition-colors duration-300">
-                                <i class="fab fa-github text-2xl"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">Go</span>
-                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">FastAPI</span>
-                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">React</span>
-                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">Docker</span>
-                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">sentence-transformers</span>
-                    </div>
-                    <p class="text-custom-red text-lg leading-relaxed mb-4">A news site with a recommendation system that tracks both user interactions and content similarity. Inspired by my childhood routine of reading only the newspaper sections that interested me every morning</p>
-                </div>
-
-                <!-- QueQueue -->
-                <div class="project-card relative bg-white border border-gray-100 rounded-lg p-8 cursor-pointer hover:-translate-y-1 hover:border-custom-red/30 hover:shadow-lg transition-all duration-300 focus-within:ring-2 focus-within:ring-custom-red focus-within:ring-offset-4">
-                    <a href="quequeue/" class="absolute inset-0 z-10 rounded-lg focus:outline-none" aria-label="Read the QueQueue project page"></a>
-                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3 mb-4">
-                        <div class="flex flex-wrap items-center gap-3">
-                            <h3 class="text-2xl font-semibold text-custom-red">QueQueue</h3>
-                            <span class="text-custom-red" aria-label="Featured project" title="Featured project">
-                                <i class="fas fa-star text-lg"></i>
-                            </span>
-                        </div>
-                        <div class="relative z-20 flex gap-3 items-center">
-                            <a href="https://quequeue.app" target="_blank"
-                               class="text-custom-red hover:text-custom-red-light transition-colors duration-300">
-                                <i class="fas fa-globe text-2xl"></i>
-                            </a>
-                            <a href="https://github.com/parthkotwal/quequeue" target="_blank" 
-                               class="text-custom-red hover:text-custom-red-light transition-colors duration-300">
-                                <i class="fab fa-github text-2xl"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">Django</span>
-                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">Vue.js</span>
-                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">Scikit-learn</span>
-                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">AWS (ECR, EC2, S3, RDS, Cloudfront)</span>
-                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">Docker</span>
-                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">PostgreSQL</span>
-                    </div>
-                    <p class="text-custom-red text-lg leading-relaxed">Django + Vue app to save, restore and recommend Spotify queues easily. Addresses a personal trauma of losing the ideal Spotify queue on many occasions</p>
-                </div>
-
-                <!-- MUNNW SMS -->
-                <div class="project-card relative bg-white border border-gray-100 rounded-lg p-8 cursor-pointer hover:-translate-y-1 hover:border-custom-red/30 hover:shadow-lg transition-all duration-300 focus-within:ring-2 focus-within:ring-custom-red focus-within:ring-offset-4">
-                    <a href="sms/" class="absolute inset-0 z-10 rounded-lg focus:outline-none" aria-label="Read the Model United Nations Northwest SMS Admin project page"></a>
-                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3 mb-4">
-                        <div class="flex flex-wrap items-center gap-3">
-                            <h3 class="text-2xl font-semibold text-custom-red">Model United Nations Northwest SMS Admin</h3>
-                            <span class="text-custom-red" aria-label="Featured project" title="Featured project">
-                                <i class="fas fa-star text-lg"></i>
-                            </span>
-                        </div>
-                        <a href="https://github.com/parthkotwal/munnorthwest_sms" target="_blank" 
-                           class="relative z-20 text-custom-red hover:text-custom-red-light transition-colors duration-300">
-                            <i class="fab fa-github text-2xl"></i>
-                        </a>
-                    </div>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">FastAPI</span>
-                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">Twilio</span>
-                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">PostgreSQL</span>
-                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">SQLAlchemy</span>
-                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">Tailwind CSS</span>
-                    </div>
-                    <p class="text-custom-red text-lg leading-relaxed">Currently used by the largest Model United Nations conferences in the Pacific Northwest. FastAPI + Twilio SMS admin for announcements with bulk contact management and scheduling</p>
-                </div>
-
-                <!-- Decido -->
-                <div class="project-card relative bg-white border border-gray-100 rounded-lg p-8 cursor-pointer hover:-translate-y-1 hover:border-custom-red/30 hover:shadow-lg transition-all duration-300 focus-within:ring-2 focus-within:ring-custom-red focus-within:ring-offset-4">
-                    <a href="decido/" class="absolute inset-0 z-10 rounded-lg focus:outline-none" aria-label="Read the Decido project page"></a>
-                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3 mb-4">
-                        <h3 class="text-2xl font-semibold text-custom-red">Decido</h3>
-                        <a href="https://github.com/parthkotwal/decido" target="_blank" 
-                           class="relative z-20 text-custom-red hover:text-custom-red-light transition-colors duration-300">
-                            <i class="fab fa-github text-2xl"></i>
-                        </a>
-                    </div>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">Python</span>
-                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">FastAPI</span>
-                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">Playwright</span>
-                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">Modal</span>
-                    </div>
-                    <p class="text-custom-red text-lg leading-relaxed">Multimodal (DOM + Vision) web agent for studying why multi-step browser agents fail. Based on the <a href="https://arxiv.org/abs/2604.08516" target="_blank" class="relative z-20 text-custom-red hover:text-custom-red-light underline">MolmoWeb paper</a></p>
-                </div>
-
-                <!-- braai CNN -->
-                <div class="project-card relative bg-white border border-gray-100 rounded-lg p-8 cursor-pointer hover:-translate-y-1 hover:border-custom-red/30 hover:shadow-lg transition-all duration-300 focus-within:ring-2 focus-within:ring-custom-red focus-within:ring-offset-4">
-                    <a href="braai-cnn/" class="absolute inset-0 z-10 rounded-lg focus:outline-none" aria-label="Read the Transient Detection with braai CNN project page"></a>
-                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3 mb-4">
-                        <h3 class="text-2xl font-semibold text-custom-red">Transient Detection with braai CNN</h3>
-                        <a href="https://github.com/parthkotwal/braai-cnn" target="_blank" 
-                           class="relative z-20 text-custom-red hover:text-custom-red-light transition-colors duration-300">
-                            <i class="fab fa-github text-2xl"></i>
-                        </a>
-                    </div>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">PyTorch</span>
-                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">CuPy</span>
-                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">NumPy</span>
-                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">Scikit-learn</span>
-                    </div>
-                    <p class="text-custom-red text-lg leading-relaxed">Custom CuPy/NumPy CNN for astrophysical transient detection. Based on the "Real-bogus classification for the Zwicky Transient Facility using deep learning" <a href="https://arxiv.org/abs/1907.11259" target="_blank" class="relative z-20 text-custom-red hover:text-custom-red-light underline">paper</a></p>
-                </div>
-
-                <!-- Star Class Forest -->
-                <div class="project-card relative bg-white border border-gray-100 rounded-lg p-8 cursor-pointer hover:-translate-y-1 hover:border-custom-red/30 hover:shadow-lg transition-all duration-300 focus-within:ring-2 focus-within:ring-custom-red focus-within:ring-offset-4">
-                    <a href="star-class-forest/" class="absolute inset-0 z-10 rounded-lg focus:outline-none" aria-label="Read the Automated Stellar Classification project page"></a>
-                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3 mb-4">
-                        <h3 class="text-2xl font-semibold text-custom-red">Automated Stellar Classification</h3>
-                        <a href="https://github.com/parthkotwal/Star-Class-Forest" target="_blank" 
-                           class="relative z-20 text-custom-red hover:text-custom-red-light transition-colors duration-300">
-                            <i class="fab fa-github text-2xl"></i>
-                        </a>
-                    </div>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">Scikit-learn</span>
-                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">Pandas</span>
-                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">NumPy</span>
-                        <span class="px-3 py-1 bg-custom-red/10 text-custom-red text-sm font-medium rounded-full">Matplotlib</span>
-                    </div>
-                    <p class="text-custom-red text-lg leading-relaxed">Random-forest-based stellar spectral classifier with high accuracy and interpretability.</p>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-16 px-6 bg-white">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-3xl font-bold text-custom-red mb-8">Contact</h2>
-            <div class="flex justify-center items-center gap-8">
-                <a href="https://github.com/parthkotwal/" target="_blank" class="text-custom-red hover:text-custom-red-light transition-colors duration-300" aria-label="GitHub">
-                    <i class="fab fa-github text-3xl"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/parthkotwal/" target="_blank" class="text-custom-red hover:text-custom-red-light transition-colors duration-300" aria-label="LinkedIn">
-                    <i class="fab fa-linkedin text-3xl"></i>
-                </a>
-                <a href="mailto:pkotwal@uw.edu" target="_blank" class="text-custom-red hover:text-custom-red-light transition-colors duration-300" aria-label="Email">
-                    <i class="fas fa-envelope text-3xl"></i>
-                </a>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- Footer -->
-    <footer class="py-12 px-6 border-t border-gray-100">
-        <div class="max-w-4xl mx-auto text-center">
-            <p class="text-custom-red text-lg">&copy; 2026 Parth Kotwal. All rights reserved.</p>
-        </div>
+    <footer>
+        <p>© 2026 Parth Kotwal</p>
     </footer>
-
-    <!-- Mobile Menu Toggle Script -->
-    <script>
-        // Add smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Add mobile menu functionality
-        const nav = document.querySelector('nav');
-        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const mobileMenuIcon = mobileMenuToggle.querySelector('i');
-        const mobileMenuLinks = mobileMenu.querySelectorAll('a[href^="#"]');
-
-        const setMobileMenuState = (open) => {
-            mobileMenu.classList.toggle('hidden', !open);
-            mobileMenuToggle.setAttribute('aria-expanded', String(open));
-            mobileMenuIcon.classList.toggle('fa-bars', !open);
-            mobileMenuIcon.classList.toggle('fa-xmark', open);
-        };
-
-        mobileMenuToggle.addEventListener('click', () => {
-            const isOpen = !mobileMenu.classList.contains('hidden');
-            setMobileMenuState(!isOpen);
-        });
-
-        mobileMenuLinks.forEach(link => {
-            link.addEventListener('click', () => setMobileMenuState(false));
-        });
-
-        window.addEventListener('resize', () => {
-            if (window.innerWidth >= 768) {
-                setMobileMenuState(false);
-            }
-        });
-
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                nav.classList.add('shadow-sm');
-            } else {
-                nav.classList.remove('shadow-sm');
-            }
-        });
-
-        // Primary color theme toggle
-        const THEME_KEY = 'portfolio-theme';
-        const themeToggleBtn = document.getElementById('theme-toggle');
-        const root = document.documentElement;
-        const favicon = document.getElementById('site-favicon');
-        const RED_FAVICON = 'images/logo-3.svg';
-        const BLUE_FAVICON = 'images/logo-2.svg';
-        const RED_PRIMARY = '#DC143C';
-        const BLUE_PRIMARY = '#236899';
-
-        const applyTheme = (theme) => {
-            const blueActive = theme === 'blue';
-            root.classList.toggle('theme-blue', blueActive);
-            root.classList.toggle('theme-red', !blueActive);
-            themeToggleBtn.textContent = blueActive ? 'Red' : 'Blue';
-            themeToggleBtn.setAttribute('aria-pressed', String(blueActive));
-            favicon.setAttribute('href', blueActive ? BLUE_FAVICON : RED_FAVICON);
-            themeToggleBtn.style.color = blueActive ? RED_PRIMARY : BLUE_PRIMARY;
-        };
-
-        const savedTheme = localStorage.getItem(THEME_KEY);
-        applyTheme(savedTheme === 'red' ? 'red' : 'blue');
-
-        themeToggleBtn.addEventListener('click', () => {
-            const nextTheme = root.classList.contains('theme-blue') ? 'red' : 'blue';
-            applyTheme(nextTheme);
-            localStorage.setItem(THEME_KEY, nextTheme);
-        });
-
-        // Load "currently working on" projects from now.json
-        const nowProjectsContainer = document.getElementById('now-projects');
-
-        const renderNowProjects = (projects) => {
-            if (!Array.isArray(projects) || projects.length === 0) {
-                nowProjectsContainer.innerHTML = '<p class="text-custom-red text-lg">No active projects listed right now.</p>';
-                return;
-            }
-
-            nowProjectsContainer.innerHTML = '';
-            projects.forEach((project) => {
-                const item = document.createElement('div');
-                item.className = 'border-l-4 border-custom-red pl-4';
-
-                const name = document.createElement('h4');
-                name.className = 'text-xl font-semibold text-custom-red';
-                name.textContent = project.name || 'Untitled project';
-
-                const description = document.createElement('p');
-                description.className = 'text-custom-red text-lg leading-relaxed mt-1';
-                description.textContent = project.description || '';
-
-                item.appendChild(name);
-                item.appendChild(description);
-                nowProjectsContainer.appendChild(item);
-            });
-        };
-
-        fetch('now.json')
-            .then((response) => {
-                if (!response.ok) {
-                    throw new Error('Failed to load now.json');
-                }
-                return response.json();
-            })
-            .then((data) => renderNowProjects(data.projects))
-            .catch(() => {
-                nowProjectsContainer.innerHTML = '<p class="text-custom-red text-lg">Unable to load current projects right now.</p>';
-            });
-    </script>
+    <script src="assets/home.js"></script>
 </body>
 </html>

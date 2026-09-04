@@ -2,7 +2,6 @@
     const THEME_KEY = "portfolio-theme";
     const root = document.documentElement;
     const themeToggle = document.getElementById("theme-toggle");
-    const favicon = document.getElementById("site-favicon");
     const nav = document.querySelector("nav");
     const mobileMenuToggle = document.getElementById("mobile-menu-toggle");
     const mobileMenu = document.getElementById("mobile-menu");
@@ -13,10 +12,6 @@
         root.classList.toggle("theme-blue", blueActive);
         themeToggle.textContent = blueActive ? "Red" : "Blue";
         themeToggle.setAttribute("aria-pressed", String(blueActive));
-        favicon.setAttribute(
-            "href",
-            blueActive ? "../images/logo-2.svg" : "../images/logo-3.svg"
-        );
     };
 
     const setMobileMenuState = (open) => {
@@ -27,7 +22,7 @@
     };
 
     const savedTheme = localStorage.getItem(THEME_KEY);
-    applyTheme(savedTheme === "blue" ? "blue" : "red");
+    applyTheme(savedTheme === "red" ? "red" : "blue");
 
     themeToggle.addEventListener("click", () => {
         const nextTheme = root.classList.contains("theme-blue") ? "red" : "blue";
