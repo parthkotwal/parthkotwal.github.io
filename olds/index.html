@@ -9,106 +9,31 @@
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://parthkotwal.github.io/olds/">
     <link rel="canonical" href="https://parthkotwal.github.io/olds/">
-
     <title>Olds | Parth Kotwal</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link id="site-favicon" rel="icon" type="image/png" href="../assets/symbol.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" type="image/png" href="../assets/symbol.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../assets/project.css">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        'merriweather': ['Merriweather', 'serif'],
-                    },
-                    colors: {
-                        'custom-red': 'var(--primary)',
-                        'custom-red-light': 'var(--primary-light)',
-                        'custom-red-dark': 'var(--primary-dark)',
-                    }
-                }
-            }
-        }
-    </script>
-    <script defer src="../assets/project.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/project.css?v=20260904">
 </head>
+<body>
+    <a class="skip-link" href="#project-note">Skip to project</a>
+    <header class="site-header">
+        <nav class="nav-shell" aria-label="Primary navigation">
+            <a class="identity" href="../">Parth Kotwal</a>
+            <div class="nav-links"><a href="../#about">About</a><a href="../#experience">Experience</a><a href="../#projects">Projects</a></div>
+        </nav>
+    </header>
 
-<body class="bg-white text-custom-red font-merriweather">
-    <a href="#project-note" class="skip-link">Skip to project</a>
-
-    <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-100 z-50" aria-label="Primary navigation">
-        <div class="max-w-6xl mx-auto px-6 py-4">
-            <div class="flex justify-between items-center">
-                <a href="../" class="text-2xl font-bold text-custom-red hover:text-custom-red-light transition-colors duration-300">
-                    Parth Kotwal
-                </a>
-                <div class="hidden md:flex space-x-8">
-                    <a href="../#about" class="text-custom-red hover:text-custom-red-light transition-colors duration-300 font-medium">About</a>
-                    <a href="../#experience" class="text-custom-red hover:text-custom-red-light transition-colors duration-300 font-medium">Experience</a>
-                    <a href="../#projects" class="text-custom-red hover:text-custom-red-light transition-colors duration-300 font-medium">Projects</a>
-                </div>
-                <div class="flex items-center space-x-4">
-                    <button id="mobile-menu-toggle" type="button" class="md:hidden text-custom-red hover:text-custom-red-light transition-colors duration-300" aria-label="Toggle navigation menu" aria-controls="mobile-menu" aria-expanded="false">
-                        <i class="fas fa-bars text-xl"></i>
-                    </button>
-                    <button id="theme-toggle" type="button" class="px-3 py-1 rounded-full border border-custom-red/40 text-custom-red text-sm font-medium hover:bg-custom-red/10 transition-colors duration-300" aria-label="Toggle primary color theme" aria-pressed="false">
-                        Blue
-                    </button>
-                    <a href="https://github.com/parthkotwal/" target="_blank" rel="noopener noreferrer" class="text-custom-red hover:text-custom-red-light transition-colors duration-300" aria-label="GitHub profile">
-                        <i class="fab fa-github text-xl"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/parthkotwal/" target="_blank" rel="noopener noreferrer" class="text-custom-red hover:text-custom-red-light transition-colors duration-300" aria-label="LinkedIn profile">
-                        <i class="fab fa-linkedin text-xl"></i>
-                    </a>
-                    <a href="mailto:pkotwal@uw.edu" class="text-custom-red hover:text-custom-red-light transition-colors duration-300" aria-label="Email Parth">
-                        <i class="fas fa-envelope text-xl"></i>
-                    </a>
-                </div>
-            </div>
-            <div id="mobile-menu" class="md:hidden hidden pt-4 pb-2 space-y-3">
-                <a href="../#about" class="block text-custom-red hover:text-custom-red-light transition-colors duration-300 font-medium">About</a>
-                <a href="../#experience" class="block text-custom-red hover:text-custom-red-light transition-colors duration-300 font-medium">Experience</a>
-                <a href="../#projects" class="block text-custom-red hover:text-custom-red-light transition-colors duration-300 font-medium">Projects</a>
-            </div>
-        </div>
-    </nav>
-
-    <main id="project-note" class="max-w-4xl mx-auto px-6 pt-36 pb-24">
-        <a href="../#projects" class="inline-flex items-center gap-2 text-sm font-medium text-custom-red hover:text-custom-red-light transition-colors duration-300 mb-10">
-            <span aria-hidden="true">←</span> Projects
-        </a>
-
+    <main id="project-note" class="project-shell">
+        <a class="back-link" href="../#projects">← Projects</a>
         <article>
-            <header class="pb-10 border-b border-custom-red/20">
-                <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-5">
-                    <div>
-                        <h1 class="text-4xl md:text-5xl font-bold text-custom-red leading-tight mb-4">Olds</h1>
-                        <p class="text-xl leading-relaxed text-custom-red max-w-3xl">A news reader that finds non-obvious connections between stories across topics, then explains why those stories belong together.</p>
-                    </div>
-                    <div class="shrink-0 flex flex-wrap sm:flex-col gap-4 sm:items-end">
-                        <a href="https://readolds.fyi" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-custom-red hover:text-custom-red-light transition-colors duration-300 font-medium">
-                            <i class="fas fa-globe" aria-hidden="true"></i>
-                            Live site
-                        </a>
-                        <a href="https://github.com/parthkotwal/olds" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-custom-red hover:text-custom-red-light transition-colors duration-300 font-medium">
-                            <i class="fab fa-github text-xl" aria-hidden="true"></i>
-                            GitHub
-                        </a>
-                    </div>
+            <header class="project-hero">
+                <div class="project-title-row">
+                    <div><h1>Olds</h1><p class="project-deck">A news reader that finds non-obvious connections between stories across topics, then explains why those stories belong together.</p></div>
+                    <div class="project-actions"><a href="https://readolds.fyi" target="_blank" rel="noopener noreferrer">Live ↗</a><a href="https://github.com/parthkotwal/olds" target="_blank" rel="noopener noreferrer">Code ↗</a></div>
                 </div>
-
-                <div class="flex flex-wrap gap-2 mt-7" aria-label="Technologies used">
-                    <span class="project-tag">Go</span>
-                    <span class="project-tag">FastAPI</span>
-                    <span class="project-tag">React</span>
-                    <span class="project-tag">sentence-transformers</span>
-                    <span class="project-tag">Supabase</span>
-                    <span class="project-tag">Docker</span>
-                </div>
+                <ul class="project-tech" aria-label="Technologies used"><li>Go</li><li>FastAPI</li><li>React</li><li>sentence-transformers</li><li>Supabase</li><li>Docker</li></ul>
             </header>
 
             <div class="project-copy">
@@ -137,17 +62,9 @@
                 </section>
             </div>
 
-            <footer class="mt-16 pt-8 border-t border-custom-red/20 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5">
-                <a href="../#projects" class="font-medium text-custom-red hover:text-custom-red-light transition-colors duration-300">← Back to Projects</a>
-                <a href="https://github.com/parthkotwal/olds#readme" target="_blank" rel="noopener noreferrer" class="font-medium text-custom-red hover:text-custom-red-light transition-colors duration-300">Read the technical README ↗</a>
-            </footer>
+            <footer class="project-footer"><a href="../#projects">← Back to Projects</a><a href="https://github.com/parthkotwal/olds#readme" target="_blank" rel="noopener noreferrer">Technical README ↗</a></footer>
         </article>
     </main>
-
-    <footer class="py-12 px-6 border-t border-gray-100">
-        <div class="max-w-4xl mx-auto text-center">
-            <p class="text-custom-red text-lg">&copy; 2026 Parth Kotwal. All rights reserved.</p>
-        </div>
-    </footer>
+    <footer class="site-footer"><p>© 2026 Parth Kotwal</p></footer>
 </body>
 </html>

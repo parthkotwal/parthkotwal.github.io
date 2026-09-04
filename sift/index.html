@@ -9,100 +9,31 @@
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://parthkotwal.github.io/sift/">
     <link rel="canonical" href="https://parthkotwal.github.io/sift/">
-
     <title>Sift | Parth Kotwal</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link id="site-favicon" rel="icon" type="image/png" href="../assets/symbol.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" type="image/png" href="../assets/symbol.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../assets/project.css">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        'merriweather': ['Merriweather', 'serif'],
-                    },
-                    colors: {
-                        'custom-red': 'var(--primary)',
-                        'custom-red-light': 'var(--primary-light)',
-                        'custom-red-dark': 'var(--primary-dark)',
-                    }
-                }
-            }
-        }
-    </script>
-    <script defer src="../assets/project.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/project.css?v=20260904">
 </head>
+<body>
+    <a class="skip-link" href="#project-note">Skip to project</a>
+    <header class="site-header">
+        <nav class="nav-shell" aria-label="Primary navigation">
+            <a class="identity" href="../">Parth Kotwal</a>
+            <div class="nav-links"><a href="../#about">About</a><a href="../#experience">Experience</a><a href="../#projects">Projects</a></div>
+        </nav>
+    </header>
 
-<body class="bg-white text-custom-red font-merriweather">
-    <a href="#project-note" class="skip-link">Skip to project</a>
-
-    <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-100 z-50" aria-label="Primary navigation">
-        <div class="max-w-6xl mx-auto px-6 py-4">
-            <div class="flex justify-between items-center">
-                <a href="../" class="text-2xl font-bold text-custom-red hover:text-custom-red-light transition-colors duration-300">
-                    Parth Kotwal
-                </a>
-                <div class="hidden md:flex space-x-8">
-                    <a href="../#about" class="text-custom-red hover:text-custom-red-light transition-colors duration-300 font-medium">About</a>
-                    <a href="../#experience" class="text-custom-red hover:text-custom-red-light transition-colors duration-300 font-medium">Experience</a>
-                    <a href="../#projects" class="text-custom-red hover:text-custom-red-light transition-colors duration-300 font-medium">Projects</a>
-                </div>
-                <div class="flex items-center space-x-4">
-                    <button id="mobile-menu-toggle" type="button" class="md:hidden text-custom-red hover:text-custom-red-light transition-colors duration-300" aria-label="Toggle navigation menu" aria-controls="mobile-menu" aria-expanded="false">
-                        <i class="fas fa-bars text-xl"></i>
-                    </button>
-                    <button id="theme-toggle" type="button" class="px-3 py-1 rounded-full border border-custom-red/40 text-custom-red text-sm font-medium hover:bg-custom-red/10 transition-colors duration-300" aria-label="Toggle primary color theme" aria-pressed="false">
-                        Blue
-                    </button>
-                    <a href="https://github.com/parthkotwal/" target="_blank" rel="noopener noreferrer" class="text-custom-red hover:text-custom-red-light transition-colors duration-300" aria-label="GitHub profile">
-                        <i class="fab fa-github text-xl"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/parthkotwal/" target="_blank" rel="noopener noreferrer" class="text-custom-red hover:text-custom-red-light transition-colors duration-300" aria-label="LinkedIn profile">
-                        <i class="fab fa-linkedin text-xl"></i>
-                    </a>
-                    <a href="mailto:pkotwal@uw.edu" class="text-custom-red hover:text-custom-red-light transition-colors duration-300" aria-label="Email Parth">
-                        <i class="fas fa-envelope text-xl"></i>
-                    </a>
-                </div>
-            </div>
-            <div id="mobile-menu" class="md:hidden hidden pt-4 pb-2 space-y-3">
-                <a href="../#about" class="block text-custom-red hover:text-custom-red-light transition-colors duration-300 font-medium">About</a>
-                <a href="../#experience" class="block text-custom-red hover:text-custom-red-light transition-colors duration-300 font-medium">Experience</a>
-                <a href="../#projects" class="block text-custom-red hover:text-custom-red-light transition-colors duration-300 font-medium">Projects</a>
-            </div>
-        </div>
-    </nav>
-
-    <main id="project-note" class="max-w-4xl mx-auto px-6 pt-36 pb-24">
-        <a href="../#projects" class="inline-flex items-center gap-2 text-sm font-medium text-custom-red hover:text-custom-red-light transition-colors duration-300 mb-10">
-            <span aria-hidden="true">←</span> Projects
-        </a>
-
+    <main id="project-note" class="project-shell">
+        <a class="back-link" href="../#projects">← Projects</a>
         <article>
-            <header class="pb-10 border-b border-custom-red/20">
-                <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-5">
-                    <div>
-                        <h1 class="text-4xl md:text-5xl font-bold text-custom-red leading-tight mb-4">Sift</h1>
-                        <p class="text-xl leading-relaxed text-custom-red max-w-3xl">A staged recommendation service over the Yelp Open Dataset. Given a user, it finds businesses they might like from every business in the metro.</p>
-                    </div>
-                    <a href="https://github.com/parthkotwal/sift" target="_blank" rel="noopener noreferrer" class="shrink-0 inline-flex items-center gap-2 text-custom-red hover:text-custom-red-light transition-colors duration-300 font-medium">
-                        <i class="fab fa-github text-xl" aria-hidden="true"></i>
-                        GitHub
-                    </a>
+            <header class="project-hero">
+                <div class="project-title-row">
+                    <div><h1>Sift</h1><p class="project-deck">A staged recommendation service over the Yelp Open Dataset. Given a user, it finds businesses they might like from every business in the metro.</p></div>
+                    <div class="project-actions"><a href="https://github.com/parthkotwal/sift" target="_blank" rel="noopener noreferrer">Code ↗</a></div>
                 </div>
-
-                <div class="flex flex-wrap gap-2 mt-7" aria-label="Technologies used">
-                    <span class="project-tag">Python</span>
-                    <span class="project-tag">FastAPI</span>
-                    <span class="project-tag">LightGBM</span>
-                    <span class="project-tag">Redis</span>
-                    <span class="project-tag">AWS</span>
-                    <span class="project-tag">Docker</span>
-                </div>
+                <ul class="project-tech" aria-label="Technologies used"><li>Python</li><li>FastAPI</li><li>LightGBM</li><li>Redis</li><li>AWS</li><li>Docker</li></ul>
             </header>
 
             <div class="project-copy">
@@ -111,49 +42,27 @@
                     <p>I wanted to build a recommender as a complete system rather than stop after training a model in a notebook. Scoring every business with a detailed model takes too long, so Sift became an exercise in deciding what each stage should do, how to evaluate it, and how much time it was allowed to take.</p>
                     <p>The result is a small API backed by a retrieval, ranking, and reranking pipeline, along with the offline machinery needed to produce its training data and serving features correctly.</p>
                 </section>
-
                 <section aria-labelledby="works-heading">
                     <h2 id="works-heading">How it works</h2>
                     <p>A request starts with 14,568 businesses in the metro. Exact ALS retrieval keeps 500 candidates, LightGBM reorders all 500 using user and business features, and a final reranking stage removes closed or already-reviewed businesses before applying a category-diversity limit.</p>
-
                     <div class="project-flow" aria-label="Sift recommendation pipeline">
-                        <div class="project-flow-step">
-                            <span>Retrieve</span>
-                            <strong>14.6K → 500</strong>
-                            <small>Exact ALS</small>
-                        </div>
-                        <div class="project-flow-step">
-                            <span>Rank</span>
-                            <strong>500 → 500</strong>
-                            <small>LightGBM</small>
-                        </div>
-                        <div class="project-flow-step">
-                            <span>Rerank</span>
-                            <strong>500 → k</strong>
-                            <small>Filters + diversity</small>
-                        </div>
+                        <div class="project-flow-step"><span>Retrieve</span><strong>14.6K → 500</strong><small>Exact ALS</small></div>
+                        <div class="project-flow-step"><span>Rank</span><strong>500 → 500</strong><small>LightGBM</small></div>
+                        <div class="project-flow-step"><span>Rerank</span><strong>500 → k</strong><small>Filters + diversity</small></div>
                     </div>
-
                     <p>The ranking stage deliberately keeps the full pool. An earlier version cut to 50 before filtering, which meant a valid request for 50 recommendations sometimes returned only 33–40. Letting reranking see all 500 means it can return exactly <em>k</em> whenever enough eligible candidates exist.</p>
                 </section>
-
                 <section aria-labelledby="hard-heading">
                     <h2 id="hard-heading">The part I cared about most</h2>
                     <p>The hardest problem was making the features honest. Every feature on a training row must be computed only from events that happened before that row's timestamp. Sift enforces this through one as-of read path and includes a test that deliberately attempts to leak future information and must fail.</p>
                     <p>The same feature definitions are materialized in two forms: historical values in Parquet for training and current values in Redis for serving. This keeps the training and serving implementations from quietly drifting apart.</p>
                 </section>
-
                 <section aria-labelledby="surprise-heading">
                     <h2 id="surprise-heading">What surprised me</h2>
                     <p>Filtering businesses that a user had already reviewed lowered recall@10 by roughly 42%. Looking closer made the result more useful, not less: 949 of the ranker's 2,579 top-10 hits were places the user had already reviewed, even though those places were only about 1.3% of the candidate pool.</p>
-
-                    <blockquote>
-                        More than a third of the apparent success was predicting return visits rather than helping someone discover somewhere new.
-                    </blockquote>
-
+                    <blockquote>More than a third of the apparent success was predicting return visits rather than helping someone discover somewhere new.</blockquote>
                     <p>I kept the filter and documented the metric regression deliberately. It was a good reminder that a higher offline number is only valuable when it measures the behavior the product actually wants.</p>
                 </section>
-
                 <section aria-labelledby="learned-heading">
                     <h2 id="learned-heading">What I learned</h2>
                     <p>Several ideas that looked better on paper did not survive measurement. Exact vector search was already lossless at about 1 ms p99 for this catalog, so HNSW added complexity without a useful speedup. A two-tower model did not beat ALS at its evaluation gate. On AWS, adding a second Uvicorn worker made latency worse; limiting an uncounted OpenBLAS thread pool mattered more.</p>
@@ -161,17 +70,9 @@
                 </section>
             </div>
 
-            <footer class="mt-16 pt-8 border-t border-custom-red/20 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5">
-                <a href="../#projects" class="font-medium text-custom-red hover:text-custom-red-light transition-colors duration-300">← Back to Projects</a>
-                <a href="https://github.com/parthkotwal/sift#readme" target="_blank" rel="noopener noreferrer" class="font-medium text-custom-red hover:text-custom-red-light transition-colors duration-300">Read the technical README ↗</a>
-            </footer>
+            <footer class="project-footer"><a href="../#projects">← Back to Projects</a><a href="https://github.com/parthkotwal/sift#readme" target="_blank" rel="noopener noreferrer">Technical README ↗</a></footer>
         </article>
     </main>
-
-    <footer class="py-12 px-6 border-t border-gray-100">
-        <div class="max-w-4xl mx-auto text-center">
-            <p class="text-custom-red text-lg">&copy; 2026 Parth Kotwal. All rights reserved.</p>
-        </div>
-    </footer>
+    <footer class="site-footer"><p>© 2026 Parth Kotwal</p></footer>
 </body>
 </html>

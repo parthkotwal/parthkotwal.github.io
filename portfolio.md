@@ -23,8 +23,6 @@ CS @ University of Washington, currently exploring recommendation systems!
 
 A staged recommendation service over the Yelp Open Dataset. Given a user, it finds businesses they might like from every business in the metro.
 
-**Technologies:** Python · FastAPI · LightGBM · Redis · AWS · Docker
-
 **Source:** [GitHub](https://github.com/parthkotwal/sift)
 
 ### Why I built it
@@ -68,8 +66,6 @@ The deployed service reached a warm server-side p99 of 95.41 ms at 20 requests p
 ## [Decido](https://parthkotwal.github.io/decido/)
 
 A multimodal web agent for studying why multi-step browser agents fail—and how much of the answer lies around the model rather than inside it.
-
-**Technologies:** Python · FastAPI · Playwright · gpt-5-nano · Qwen2.5-VL · Modal
 
 **Source:** [GitHub](https://github.com/parthkotwal/decido)
 
@@ -115,8 +111,6 @@ The benchmark also has deliberate limits. It uses live demo sites rather than We
 
 A news reader that finds non-obvious connections between stories across topics, then explains why those stories belong together.
 
-**Technologies:** Go · FastAPI · React · sentence-transformers · Supabase · Docker
-
 **Source:** [GitHub](https://github.com/parthkotwal/olds)
 
 ### Why I built it
@@ -147,8 +141,6 @@ It also pushed me to connect several pieces as one running product: recurring in
 
 A Spotify queue manager for saving the right sequence of songs and bringing it back when the moment calls for it.
 
-**Technologies:** Vue.js · Django · PostgreSQL · Celery · Redis · Spotify API · Docker
-
 **Source:** [GitHub](https://github.com/parthkotwal/quequeue)
 
 ### Why I built it
@@ -178,8 +170,6 @@ It also made the constraints of third-party platforms tangible. The app works be
 ## [Real/Bogus Transient Detection](https://parthkotwal.github.io/braai-cnn/)
 
 A custom CuPy CNN and a PyTorch implementation for separating real astrophysical events from false detections in ZTF image cutouts.
-
-**Technologies:** PyTorch · CuPy · NumPy · scikit-learn · CNNs
 
 **Source:** [GitHub](https://github.com/parthkotwal/braai-cnn)
 
@@ -224,8 +214,6 @@ The project also changed how I read evaluation results. Accuracy was only one pa
 
 A conference messaging tool for managing participant contacts and sending timely announcements to the right groups.
 
-**Technologies:** FastAPI · Twilio · PostgreSQL · SQLAlchemy · Tailwind CSS
-
 **Source:** [GitHub](https://github.com/parthkotwal/munnorthwest_sms)
 
 ### Why I built it
@@ -255,8 +243,6 @@ Building around an actual conference workflow pushed me to think beyond the happ
 ## [Automated Stellar Classification](https://parthkotwal.github.io/star-class-forest/)
 
 An end-to-end exploration of predicting a star's spectral class from its physical properties.
-
-**Technologies:** Python · Scikit-learn · Pandas · NumPy · Matplotlib
 
 **Source:** [GitHub](https://github.com/parthkotwal/Star-Class-Forest)
 
