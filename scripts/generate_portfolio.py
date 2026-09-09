@@ -370,14 +370,32 @@ def render_home_context(root: Path, home: Node) -> list[str]:
     if experience is not None:
         heading = find_first(experience, "h2")
         lines.extend([f"## {plain_text(heading) if heading else 'Experience'}", ""])
-        for card in find_all(experience, "div"):
-            if not has_class(card, "border-l-4"):
+        for card in find_all(experience, "li"):
+            if not has_class(card, "work-row"):
                 continue
             role = find_first(card, "h3")
-            detail = find_first(card, "p")
             if role is not None:
-                suffix = f" — {plain_text(detail)}" if detail is not None else ""
-                lines.append(f"- **{plain_text(role)}**{suffix}")
+                company = next(
+                    (node for node in find_all(card, "p") if has_class(node, "work-company")),
+                    None,
+                )
+                description = next(
+                    (node for node in find_all(card, "p") if has_class(node, "work-description")),
+                    None,
+                )
+                date = find_first(card, "time")
+                company_text = plain_text(company) if company is not None else ""
+                title = f"{plain_text(role)}, {company_text}" if company_text else plain_text(role)
+                metadata = [
+                    text
+                    for text in (
+                        plain_text(date) if date is not None else "",
+                        plain_text(description) if description is not None else "",
+                    )
+                    if text
+                ]
+                suffix = f" — {' — '.join(metadata)}" if metadata else ""
+                lines.append(f"- **{title}**{suffix}")
         lines.append("")
 
     return lines

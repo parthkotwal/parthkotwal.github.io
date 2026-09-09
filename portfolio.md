@@ -16,6 +16,9 @@ CS @ University of Washington, currently exploring recommendation systems!
 
 ## Experience
 
+- **Software Engineer Intern, Infoblox** — Jun—Aug 2026 — Custom detectors for AI Governance
+- **Machine Learning Researcher, UW Computer Systems Lab** — Oct 2025—now — Runtime correction for multi-step personal agents
+- **Software Engineer Intern, miniOrange** — Jul—Sep 2024 — Android malware and anomaly detection
 
 ## Projects
 
