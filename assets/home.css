@@ -7,8 +7,9 @@
     --line: #e5e9eb;
     --warm: #e55320;
     --uw: #4b2e83;
-    --sans: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    --mono: "Fragment Mono", "SFMono-Regular", Consolas, monospace;
+    --display: "Newsreader", Georgia, serif;
+    --sans: "Schibsted Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --mono: "Schibsted Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 * { box-sizing: border-box; }
@@ -80,10 +81,10 @@ footer {
 .identity {
     display: inline-flex;
     align-items: center;
-    font-family: var(--mono);
-    font-size: 0.86rem;
+    font-family: var(--display);
+    font-size: 0.95rem;
     font-weight: 600;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.03em;
 }
 
 .nav-links {
@@ -130,11 +131,11 @@ figure { margin: 0; }
 
 h1 {
     margin-bottom: 0.9rem;
-    font-family: var(--mono);
+    font-family: var(--display);
     font-size: clamp(2.75rem, 6.4vw, 4.3rem);
     font-weight: 500;
     line-height: 1;
-    letter-spacing: -0.075em;
+    letter-spacing: -0.055em;
 }
 
 .intro-lede {
@@ -259,7 +260,7 @@ h1 {
 
 .section-heading h2 {
     margin-bottom: 0;
-    font-family: var(--mono);
+    font-family: var(--display);
     font-size: 1.2rem;
     font-weight: 500;
     letter-spacing: -0.035em;
@@ -355,10 +356,11 @@ h1 {
 
 .project-main h3 {
     margin-bottom: 0.24rem;
-    font-family: var(--mono);
-    font-size: 0.95rem;
+    font-family: var(--display);
+    font-size: 1.08rem;
     font-weight: 500;
-    line-height: 1.4;
+    line-height: 1.3;
+    letter-spacing: -0.025em;
     transition: color 160ms ease;
 }
 
@@ -405,7 +407,7 @@ footer p { margin-bottom: 0; }
 @media (max-width: 700px) {
     .nav-shell, main, footer { width: min(100% - 2rem, 860px); }
     .nav-shell { min-height: 3.75rem; gap: 0.75rem; }
-    .identity { font-size: 0.74rem; white-space: nowrap; }
+    .identity { font-size: 0.84rem; white-space: nowrap; }
     .nav-links {
         gap: clamp(0.6rem, 3vw, 0.85rem);
         font-size: clamp(0.64rem, 2.8vw, 0.7rem);
