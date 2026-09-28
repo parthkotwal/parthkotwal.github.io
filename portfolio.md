@@ -32,6 +32,8 @@ A staged recommendation service over the Yelp Open Dataset. Given a user, it fin
 
 I wanted to build a recommender as a complete system rather than stop after training a model in a notebook. Scoring every business with a detailed model takes too long, so Sift became an exercise in deciding what each stage should do, how to evaluate it, and how much time it was allowed to take.
 
+The system was designed around a concrete serving requirement: keep warm server-side *p99 latency below 100 ms* at 20 requests per second.
+
 The result is a small API backed by a retrieval, ranking, and reranking pipeline, along with the offline machinery needed to produce its training data and serving features correctly.
 
 ### How it works

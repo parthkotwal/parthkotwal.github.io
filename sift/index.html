@@ -43,6 +43,7 @@
                 <section aria-labelledby="why-heading">
                     <h2 id="why-heading">Why I built it</h2>
                     <p>I wanted to build a recommender as a complete system rather than stop after training a model in a notebook. Scoring every business with a detailed model takes too long, so Sift became an exercise in deciding what each stage should do, how to evaluate it, and how much time it was allowed to take.</p>
+                    <p>The system was designed around a concrete serving requirement: keep warm server-side <em>p99 latency below 100 ms</em> at 20 requests per second.</p>
                     <p>The result is a small API backed by a retrieval, ranking, and reranking pipeline, along with the offline machinery needed to produce its training data and serving features correctly.</p>
                 </section>
                 <section aria-labelledby="works-heading">
