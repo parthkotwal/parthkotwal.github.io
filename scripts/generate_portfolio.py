@@ -348,6 +348,9 @@ def render_home_context(root: Path, home: Node) -> list[str]:
                     description = compact(str(project.get("description", "")))
                     if name_value:
                         suffix = f" — {description}" if description else ""
+                        url = compact(str(project.get("url", "")))
+                        if url:
+                            name_value = f"[{name_value}]({url})"
                         lines.append(f"- **{name_value}**{suffix}")
                 lines.append("")
 

@@ -1,8 +1,9 @@
 {
   "projects": [
     {
-      "name": "Eggly",
-      "description": "Social media for tasters"
+      "name": "Milky",
+      "description": "A local macOS search and action engine",
+      "url": "https://github.com/parthkotwal/milky"
     }
   ]
 }

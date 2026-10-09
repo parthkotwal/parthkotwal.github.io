@@ -8,11 +8,11 @@ This is the plain-Markdown version of the portfolio, generated from the public w
 
 ## About
 
-CS @ University of Washington, currently exploring recommendation systems!
+CS @ University of Washington, currently exploring recommendations, applied ML, and reliable agents.
 
 ### Building right now
 
-- **Eggly** — Social media for tasters
+- **[Milky](https://github.com/parthkotwal/milky)** — A local macOS search and action engine
 
 ## Experience
 

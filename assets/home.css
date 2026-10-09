@@ -223,6 +223,17 @@ h1 {
     font-size: 0.88rem;
 }
 
+.building-line {
+    margin-bottom: 0.75rem;
+    color: var(--muted);
+    font-size: 0.88rem;
+}
+
+.building-line strong { color: var(--ink); font-weight: 600; }
+
+.building-line a { color: var(--blue); }
+.building-line a:hover { text-decoration: underline; text-underline-offset: 0.18em; }
+
 .personal-line span {
     margin-right: 0.35rem;
     color: #c93b3b;
